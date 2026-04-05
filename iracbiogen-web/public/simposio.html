@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XVI Simposio Internacional de Reproducción Animal · IRAC BIOGEN</title>
+    <meta name="description"
+        content="XVI Simposio Internacional de Reproducción Animal. 26, 27 y 28 de agosto de 2026. Centro de Convenciones Córdoba, Argentina. Disertantes internacionales y referentes mundiales en biotecnología reproductiva bovina.">
+    <link rel="stylesheet" href="styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,600;0,700;1,600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        crossorigin="anonymous">
+
+    <style>
+        /* ————— Estilos específicos de esta página ————— */
+
+        /* Hero */
+        .simposio-page-hero {
+            position: relative;
+            background: linear-gradient(150deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: var(--bg-white);
+            padding: var(--sp-10) 0 var(--sp-9);
+            min-height: 480px;
+            display: flex;
+            align-items: center;
+            border-bottom: 4px solid var(--accent);
+        }
+
+        .simposio-page-hero .hero-content {
+            text-align: center;
+        }
+
+        .simposio-page-hero .hero-eyebrow {
+            color: var(--accent);
+            margin-bottom: var(--sp-4);
+        }
+
+        .simposio-page-hero h1 {
+            font-size: var(--fs-3xl);
+            color: var(--bg-white);
+            margin-bottom: var(--sp-5);
+            max-width: 780px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .simposio-hero-meta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--sp-5);
+            flex-wrap: wrap;
+            margin-bottom: var(--sp-7);
+        }
+
+        .simposio-hero-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: var(--fs-md);
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.88);
+        }
+
+        .simposio-hero-meta-item i {
+            color: var(--accent);
+        }
+
+        .simposio-hero-desc {
+            font-size: var(--fs-base);
+            color: rgba(255, 255, 255, 0.72);
+            max-width: 600px;
+            margin: 0 auto var(--sp-7);
+            line-height: 1.7;
+        }
+
+        /* Sección info */
+        .simposio-info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--sp-5);
+        }
+
+        .simposio-info-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: var(--sp-5) var(--sp-5);
+            display: flex;
+            align-items: flex-start;
+            gap: var(--sp-4);
+        }
+
+        .simposio-info-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: var(--radius);
+            background: var(--bg-mid);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .simposio-info-card h4 {
+            font-size: var(--fs-xs);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-light);
+            margin-bottom: 4px;
+            font-family: var(--font-body);
+        }
+
+        .simposio-info-card p {
+            font-size: var(--fs-sm);
+            font-weight: 600;
+            color: var(--primary-dark);
+            line-height: 1.4;
+        }
+
+        /* Sección disertantes */
+        .spk-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--sp-4);
+        }
+
+        .spk-card {
+            position: relative;
+            background: var(--bg-white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: var(--sp-5) var(--sp-4) var(--sp-4);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: box-shadow var(--transition), border-color var(--transition);
+        }
+
+        .spk-card:hover {
+            box-shadow: var(--shadow-sm);
+            border-color: rgba(11, 59, 89, 0.25);
+        }
+
+        .spk-flag {
+            position: absolute;
+            top: var(--sp-3);
+            right: var(--sp-3);
+            font-size: 1.1rem;
+            line-height: 1;
+        }
+
+        .spk-av {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: var(--bg-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--fs-base);
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            margin-bottom: var(--sp-4);
+            flex-shrink: 0;
+        }
+
+        .spk-name {
+            font-size: var(--fs-sm);
+            font-weight: 700;
+            color: var(--primary-dark);
+            line-height: 1.3;
+            margin-bottom: 4px;
+        }
+
+        .spk-institution {
+            font-size: var(--fs-xs);
+            color: var(--text-light);
+            line-height: 1.4;
+            margin-bottom: 3px;
+        }
+
+        .spk-country {
+            font-size: 0.72rem;
+            color: var(--text-light);
+            opacity: 0.7;
+            margin-bottom: var(--sp-1);
+        }
+
+        /* Accordion bio */
+        .spk-bio-toggle {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: var(--sp-3);
+            font-size: var(--fs-xs);
+            font-weight: 600;
+            color: var(--primary);
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            transition: color var(--transition);
+        }
+
+        .spk-bio-toggle i {
+            font-size: 0.65rem;
+            transition: transform 0.22s ease;
+        }
+
+        .spk-bio-toggle:hover {
+            color: var(--accent-dark);
+        }
+
+        .spk-bio-body {
+            margin-top: var(--sp-3);
+            padding-top: var(--sp-3);
+            border-top: 1px solid var(--border);
+            text-align: left;
+            width: 100%;
+        }
+
+        .spk-bio-body p {
+            font-size: var(--fs-xs);
+            color: var(--text-light);
+            line-height: 1.65;
+        }
+
+        /* CTA de contacto */
+        .simposio-contact {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            padding: var(--sp-9) 0;
+            text-align: center;
+            color: var(--bg-white);
+        }
+
+        .simposio-contact h2 {
+            color: var(--bg-white);
+            font-size: var(--fs-2xl);
+            margin-bottom: var(--sp-3);
+        }
+
+        .simposio-contact p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: var(--fs-md);
+            margin-bottom: var(--sp-6);
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Lista de temas */
+        .simposio-temas-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--sp-4);
+            max-width: 960px;
+        }
+
+        .tema-card {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--sp-4);
+            padding: var(--sp-5);
+            background: var(--bg-white);
+            border: 1px solid var(--border);
+            border-bottom: 3px solid transparent;
+            border-radius: var(--radius-lg);
+            transition: border-color 0.22s ease, box-shadow 0.22s ease, transform 0.22s ease;
+        }
+
+        .tema-card:hover {
+            border-bottom-color: var(--accent);
+            box-shadow: 0 4px 16px rgba(11, 59, 89, 0.09);
+            transform: translateY(-2px);
+        }
+
+        .tema-num {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: var(--bg-white);
+            font-size: var(--fs-xs);
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .tema-content {
+            display: flex;
+            flex-direction: column;
+            gap: var(--sp-2);
+        }
+
+        .tema-titulo {
+            font-size: var(--fs-sm);
+            font-weight: 700;
+            color: var(--primary-dark);
+            line-height: 1.3;
+        }
+
+        .tema-desc {
+            font-size: var(--fs-xs);
+            color: var(--text-light);
+            line-height: 1.65;
+            margin: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 1100px) {
+            .spk-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .simposio-info-grid {
+                grid-template-columns: 1fr;
+                gap: var(--sp-3);
+            }
+
+            .simposio-page-hero h1 {
+                font-size: var(--fs-2xl);
+            }
+
+            .simposio-hero-meta {
+                flex-direction: column;
+                gap: var(--sp-3);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .simposio-temas-list {
+                grid-template-columns: 1fr;
+            }
+
+            .spk-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .simposio-page-hero {
+                min-height: auto;
+                padding: var(--sp-8) 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .spk-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="main-header" id="main-header">
+        <div class="container header-content">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="./logo.png" alt="IRAC BIOGEN — Instituto de Reproducción Animal Córdoba">
+                </a>
+            </div>
+            <nav class="main-nav" id="desktop-nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li class="nav-item nav-item--dropdown">
+                        <a href="programas.html" class="nav-dropdown-trigger" aria-haspopup="true">
+                            <span>Formación</span>
+                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </a>
+                        <div class="nav-dropdown-panel" aria-label="Submenu de formacion">
+                            <a href="programas.html" data-nav-category="all">Ver toda la oferta</a>
+                            <a href="programas.html?type=maestria" data-nav-category="maestria">Maestrías</a>
+                            <a href="programas.html?type=especializacion"
+                                data-nav-category="especializacion">Especializaciones</a>
+                            <a href="programas.html?type=curso" data-nav-category="curso">Cursos intensivos</a>
+                            <a href="programas.html?type=pasantia" data-nav-category="pasantia">Pasantías</a>
+                        </div>
+                    </li>
+                    <li><a href="index.html#institucional">Institución</a></li>
+                    <li><a href="index.html#novedades">Novedades</a></li>
+                    <li><a href="simposio.html" class="active">Simposio</a></li>
+                    <li><a href="#contacto" class="nav-cta">Contactanos</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <nav class="mobile-nav" id="mobile-nav">
+        <a href="index.html">Inicio</a>
+        <div class="mobile-nav-group">
+            <button type="button" class="mobile-submenu-toggle" aria-expanded="false"
+                aria-controls="mobileFormacionMenu">
+                <span>Formación</span>
+                <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="mobile-submenu" id="mobileFormacionMenu">
+                <a href="programas.html" data-nav-category="all">Ver toda la oferta</a>
+                <a href="programas.html?type=maestria" data-nav-category="maestria">Maestrías</a>
+                <a href="programas.html?type=especializacion"
+                    data-nav-category="especializacion">Especializaciones</a>
+                <a href="programas.html?type=curso" data-nav-category="curso">Cursos intensivos</a>
+                <a href="programas.html?type=pasantia" data-nav-category="pasantia">Pasantías</a>
+            </div>
+        </div>
+        <a href="index.html#institucional">Institución</a>
+        <a href="index.html#novedades">Novedades</a>
+        <a href="simposio.html" class="active">Simposio</a>
+        <a href="#contacto" class="nav-cta">Contactanos</a>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <div class="breadcrumb-inner">
+                <a href="index.html">Inicio</a>
+                <span class="sep"><i class="fas fa-chevron-right fa-xs"></i></span>
+                <span class="current">Simposio Internacional</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="simposio-page-hero">
+        <div class="container hero-content">
+            <span class="hero-eyebrow">
+                <i class="fas fa-globe"></i> Simposio internacional · IRAC BIOGEN
+            </span>
+            <h1>XVI Simposio Internacional de Reproducción Animal</h1>
+            <div class="simposio-hero-meta">
+                <span class="simposio-hero-meta-item">
+                    <i class="fas fa-calendar-days"></i> 26, 27 y 28 de agosto de 2026
+                </span>
+                <span class="simposio-hero-meta-item">
+                    <i class="fas fa-location-dot"></i> Centro de Convenciones Córdoba, Argentina
+                </span>
+            </div>
+            <p class="simposio-hero-desc">
+                El encuentro científico de referencia en reproducción bovina de Latinoamérica.
+                Tres jornadas de conferencias magistrales con los principales especialistas mundiales de la disciplina.
+            </p>
+            <div class="hero-actions">
+                <a href="https://wa.me/5493517592643?text=Hola%2C%20quiero%20información%20sobre%20el%20XVI%20Simposio%20Internacional%20de%20Reproducción%20Animal"
+                    target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+                    <i class="fab fa-whatsapp"></i> Consultar participación
+                </a>
+                <a href="programas.html" class="btn btn-ghost btn-lg">
+                    <i class="fas fa-graduation-cap"></i> Ver oferta académica
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Información del evento -->
+    <section class="section section--light">
+        <div class="container">
+            <h2 class="section-title">El encuentro</h2>
+            <p class="section-intro">
+                Tres días de ciencia aplicada, intercambio de experiencias y actualización con los
+                equipos de investigación más relevantes en reproducción bovina del mundo.
+            </p>
+            <div class="simposio-info-grid">
+                <div class="simposio-info-card">
+                    <div class="simposio-info-icon">
+                        <i class="fas fa-calendar-days"></i>
+                    </div>
+                    <div>
+                        <h4>Fechas</h4>
+                        <p>26, 27 y 28 de agosto de 2026</p>
+                    </div>
+                </div>
+                <div class="simposio-info-card">
+                    <div class="simposio-info-icon">
+                        <i class="fas fa-location-dot"></i>
+                    </div>
+                    <div>
+                        <h4>Sede</h4>
+                        <p>Centro de Convenciones Córdoba<br>Córdoba, Argentina</p>
+                    </div>
+                </div>
+                <div class="simposio-info-card">
+                    <div class="simposio-info-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div>
+                        <h4>Disertantes</h4>
+                        <p>Referentes internacionales en reproducción y biotecnología bovina</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Temas -->
+    <section class="section section--light">
+        <div class="container">
+            <h2 class="section-title">Temas</h2>
+            <p class="section-intro">Ejes temáticos confirmados para las tres jornadas del simposio.</p>
+            <ol class="simposio-temas-list">
+                <li class="tema-card">
+                    <span class="tema-num" aria-hidden="true">1</span>
+                    <div class="tema-content">
+                        <span class="tema-titulo">Manejo reproductivo y sanitario</span>
+                        <p class="tema-desc">Importancia en la productividad de la ganadería de carne.</p>
+                    </div>
+                </li>
+                <li class="tema-card">
+                    <span class="tema-num" aria-hidden="true">2</span>
+                    <div class="tema-content">
+                        <span class="tema-titulo">Fertilidad 4.0</span>
+                        <p class="tema-desc">Optimizando la tasa de preñez en rodeos de carne con inteligencia artificial (IA) y análisis de datos.</p>
+                    </div>
+                </li>
+                <li class="tema-card">
+                    <span class="tema-num" aria-hidden="true">3</span>
+                    <div class="tema-content">
+                        <span class="tema-titulo">Nuevas herramientas tecnológicas</span>
+                        <p class="tema-desc">Optimización del manejo reproductivo en rodeos de leche de alta producción.</p>
+                    </div>
+                </li>
+                <li class="tema-card">
+                    <span class="tema-num" aria-hidden="true">4</span>
+                    <div class="tema-content">
+                        <span class="tema-titulo">Foliculogénesis</span>
+                        <p class="tema-desc">Población folicular y su impacto en la reproducción.</p>
+                    </div>
+                </li>
+                <li class="tema-card">
+                    <span class="tema-num" aria-hidden="true">5</span>
+                    <div class="tema-content">
+                        <span class="tema-titulo">Pérdidas de gestación en rodeos</span>
+                        <p class="tema-desc">En rodeos de carne manejados en condiciones pastoriles.</p>
+                    </div>
+                </li>
+                <li class="tema-card">
+                    <span class="tema-num" aria-hidden="true">6</span>
+                    <div class="tema-content">
+                        <span class="tema-titulo">Programas de IATF</span>
+                        <p class="tema-desc">Protocolos a base de GnRH en ganado de carne.</p>
+                    </div>
+                </li>
+                <li class="tema-card">
+                    <span class="tema-num" aria-hidden="true">7</span>
+                    <div class="tema-content">
+                        <span class="tema-titulo">Selección genómica</span>
+                        <p class="tema-desc">Impacto en la productividad, fertilidad y salud de las vacas lecheras.</p>
+                    </div>
+                </li>
+                <li class="tema-card">
+                    <span class="tema-num" aria-hidden="true">8</span>
+                    <div class="tema-content">
+                        <span class="tema-titulo">Estrategias Farmacológicas</span>
+                        <p class="tema-desc">Durante el puerperio para aumentar la efectividad de los protocolos hormonales.</p>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- Disertantes -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Disertantes confirmados</h2>
+            <p class="section-intro">
+                Investigadores y docentes de instituciones referentes en reproducción animal de Argentina,
+                Brasil, Uruguay y Estados Unidos.
+            </p>
+            <div class="spk-grid" id="simposioSpeakersGrid"></div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section class="simposio-contact" id="contacto">
+        <div class="container">
+            <h2>¿Querés participar?</h2>
+            <p>Consultanos por aranceles, inscripción y disponibilidad de cupos.</p>
+            <div class="hero-actions">
+                <a href="https://wa.me/5493517592643?text=Hola%2C%20quiero%20información%20sobre%20el%20XVI%20Simposio%20Internacional%20de%20Reproducción%20Animal"
+                    target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+                    <i class="fab fa-whatsapp"></i> Escribinos por WhatsApp
+                </a>
+                <a href="mailto:infoiracbiogen@gmail.com" class="btn btn-ghost btn-lg">
+                    <i class="fas fa-envelope"></i> infoiracbiogen@gmail.com
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <img src="./logo.png" alt="IRAC BIOGEN">
+                    </div>
+                    <p class="footer-tagline">Instituto de Reproducción Animal Córdoba.<br>Paraje Pozo del Tigre, Est.
+                        Gral. Paz,<br>CP 5145, Córdoba, Argentina.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/iracbiogen" target="_blank" rel="noopener noreferrer"
+                            aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/iracbiogen/" target="_blank" rel="noopener noreferrer"
+                            aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/channel/UCt8qyOt2uIhDBl2Qo9ObxJA" target="_blank"
+                            rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://wa.me/5493517592643?text=Hola%2C%20quiero%20información%20sobre%20los%20programas%20de%20IRAC%20BIOGEN"
+                            target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i
+                                class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Formación</h4>
+                    <ul>
+                        <li><a href="programas.html">Maestrías</a></li>
+                        <li><a href="programas.html">Especializaciones</a></li>
+                        <li><a href="programas.html">Cursos Intensivos</a></li>
+                        <li><a href="programas.html">Pasantías 2026</a></li>
+                        <li><a href="https://educacion.iracbiogen.com/" target="_blank" rel="noopener noreferrer">Aula
+                                Virtual <i class="fas fa-arrow-up-right-from-square fa-xs"></i></a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contacto</h4>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+5493517592643">+54 9 3517 59-2643</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+5490351589192">+549 0351-5891912</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:infoiracbiogen@gmail.com">infoiracbiogen@gmail.com</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <a href="https://wa.me/5493517592643?text=Hola%2C%20quiero%20información%20sobre%20los%20programas%20de%20IRAC%20BIOGEN"
+                            target="_blank" rel="noopener noreferrer">WhatsApp directo</a>
+                    </div>
+                    <div class="footer-contact-item"
+                        style="margin-top: var(--sp-3); padding-top: var(--sp-3); border-top: 1px solid rgba(255,255,255,0.08);">
+                        <i class="fas fa-house-chimney" style="color: var(--accent);"></i>
+                        <a href="posta-del-tigre.html">La Posta del Tigre</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Nos acompañan -->
+            <div class="footer-partners">
+                <p class="footer-partners__label">Nos acompañan</p>
+                <div class="footer-partners__logos" id="footerPartners"></div>
+            </div>
+
+            <div class="footer-bottom">
+                <span>&copy; 2026 IRAC BIOGEN. Todos los derechos reservados.</span>
+                <span>
+                    <a href="posta-del-tigre.html">La Posta del Tigre</a> ·
+                    <a href="https://iracbiogen.com/politicas-de-privacidad/" target="_blank"
+                        rel="noopener noreferrer">Privacidad</a>
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="partners.js"></script>
+    <script src="simposio.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

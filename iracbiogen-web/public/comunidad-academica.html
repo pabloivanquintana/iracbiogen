@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comunidad Académica — IRAC BIOGEN</title>
+    <meta name="description"
+        content="Una red de especialistas en reproducción animal que trasciende fronteras. Formación con colegas de México, Nueva Zelanda, Brasil, Colombia, Uruguay y Argentina.">
+    <link rel="stylesheet" href="styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,600;0,700;1,600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        crossorigin="anonymous">
+
+    <style>
+        /* ————— Hero ————— */
+        .comunidad-hero {
+            position: relative;
+            background-image: url('https://images.unsplash.com/photo-1531545514256-b1400bc00f31?auto=format&fit=crop&q=80&w=2000');
+            background-size: cover;
+            background-position: center 40%;
+            color: var(--bg-white);
+            text-align: center;
+            padding: var(--sp-10) 0;
+            min-height: 480px;
+            display: flex;
+            align-items: center;
+        }
+
+        .comunidad-hero .hero-overlay {
+            background: linear-gradient(160deg, rgba(4, 22, 33, 0.90) 0%, rgba(11, 59, 89, 0.74) 100%);
+        }
+
+        .comunidad-hero h1 {
+            font-size: var(--fs-4xl);
+            color: var(--bg-white);
+            margin-bottom: var(--sp-4);
+        }
+
+        .comunidad-hero p {
+            font-size: var(--fs-lg);
+            opacity: 0.88;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ————— Countries grid ————— */
+        .countries-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--sp-4);
+            margin-top: var(--sp-7);
+        }
+
+        .country-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: var(--sp-5) var(--sp-5);
+            display: flex;
+            align-items: center;
+            gap: var(--sp-4);
+            transition: var(--transition);
+        }
+
+        .country-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--accent);
+        }
+
+        .country-flag {
+            font-size: 2rem;
+            flex-shrink: 0;
+            line-height: 1;
+        }
+
+        .country-info h4 {
+            font-size: var(--fs-base);
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 4px;
+        }
+
+        .country-info p {
+            font-size: var(--fs-sm);
+            color: var(--text-light);
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        /* ————— Pillars ————— */
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--sp-5);
+            margin-top: var(--sp-7);
+        }
+
+        .pillar-block {
+            background: var(--bg-white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: var(--sp-6);
+            display: grid;
+            grid-template-columns: 56px 1fr;
+            gap: var(--sp-5);
+            align-items: start;
+            transition: var(--transition);
+        }
+
+        .pillar-block:hover {
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary);
+        }
+
+        .pillar-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: var(--radius-lg);
+            background: var(--bg-mid);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .pillar-text h3 {
+            font-size: var(--fs-md);
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: var(--sp-3);
+        }
+
+        .pillar-text p {
+            font-size: var(--fs-sm);
+            color: var(--text-body);
+            line-height: 1.75;
+            margin: 0;
+        }
+
+        /* ————— Large quote ————— */
+        .big-quote-block {
+            background: var(--primary);
+            border-radius: var(--radius-xl);
+            padding: var(--sp-8) var(--sp-9);
+            text-align: center;
+            color: var(--bg-white);
+            position: relative;
+            overflow: hidden;
+            margin-top: var(--sp-7);
+        }
+
+        .big-quote-block::before {
+            content: '\201C';
+            font-family: var(--font-heading);
+            font-size: 14rem;
+            color: var(--accent);
+            position: absolute;
+            top: -40px;
+            left: var(--sp-6);
+            line-height: 1;
+            opacity: 0.12;
+        }
+
+        .big-quote-block p {
+            font-size: var(--fs-xl);
+            font-family: var(--font-heading);
+            font-style: italic;
+            color: var(--bg-white);
+            max-width: 680px;
+            margin: 0 auto var(--sp-4);
+            line-height: 1.5;
+            position: relative;
+            z-index: 1;
+        }
+
+        .big-quote-block cite {
+            font-size: var(--fs-sm);
+            opacity: 0.65;
+            font-style: normal;
+        }
+
+        /* ————— Experience teasers ————— */
+        .exp-teaser-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--sp-5);
+            margin-top: var(--sp-7);
+        }
+
+        .exp-teaser-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .exp-teaser-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .exp-teaser-img {
+            height: 180px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .exp-teaser-body {
+            padding: var(--sp-5);
+        }
+
+        .exp-teaser-body .novedad-tag {
+            margin-bottom: var(--sp-3);
+        }
+
+        .exp-teaser-body h3 {
+            font-size: var(--fs-base);
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: var(--sp-4);
+            line-height: 1.4;
+        }
+
+        /* ————— Page CTA ————— */
+        .comunidad-cta {
+            background: var(--primary);
+            color: var(--bg-white);
+            text-align: center;
+            padding: var(--sp-9) 0;
+        }
+
+        .comunidad-cta h2 {
+            color: var(--bg-white);
+            font-size: var(--fs-2xl);
+            margin-bottom: var(--sp-4);
+        }
+
+        .comunidad-cta p {
+            opacity: 0.85;
+            font-size: var(--fs-md);
+            max-width: 540px;
+            margin: 0 auto var(--sp-6);
+        }
+
+        .comunidad-cta-actions {
+            display: flex;
+            gap: var(--sp-4);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ————— Responsive ————— */
+        @media (max-width: 900px) {
+            .countries-grid { grid-template-columns: repeat(2, 1fr); }
+            .pillars-grid { grid-template-columns: 1fr; }
+            .exp-teaser-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 540px) {
+            .comunidad-hero h1 { font-size: var(--fs-2xl); }
+            .countries-grid { grid-template-columns: 1fr; }
+            .big-quote-block { padding: var(--sp-7) var(--sp-5); }
+            .big-quote-block p { font-size: var(--fs-lg); }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="main-header" id="main-header">
+        <div class="container header-content">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="./logo.png" alt="IRAC BIOGEN — Instituto de Reproducción Animal Córdoba">
+                </a>
+            </div>
+            <nav class="main-nav" id="desktop-nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li class="nav-item nav-item--dropdown">
+                        <a href="programas.html" class="nav-dropdown-trigger" aria-haspopup="true">
+                            <span>Formación</span>
+                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </a>
+                        <div class="nav-dropdown-panel" aria-label="Submenu de formacion">
+                            <a href="programas.html" data-nav-category="all">Ver toda la oferta</a>
+                            <a href="programas.html?type=maestria" data-nav-category="maestria">Maestrías</a>
+                            <a href="programas.html?type=especializacion" data-nav-category="especializacion">Especializaciones</a>
+                            <a href="programas.html?type=curso" data-nav-category="curso">Cursos intensivos</a>
+                            <a href="programas.html?type=pasantia" data-nav-category="pasantia">Pasantías</a>
+                        </div>
+                    </li>
+                    <li><a href="index.html#institucional">Institución</a></li>
+                    <li class="nav-item nav-item--dropdown">
+                        <a href="comunidad-academica.html" class="nav-dropdown-trigger active" aria-haspopup="true">
+                            <span>Internacional</span>
+                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </a>
+                        <div class="nav-dropdown-panel">
+                            <a href="experiencia-internacional.html">Experiencia Internacional</a>
+                            <a href="comunidad-academica.html">Comunidad Académica</a>
+                        </div>
+                    </li>
+                    <li><a href="index.html#contacto" class="nav-cta">Contactanos</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <nav class="mobile-nav" id="mobile-nav">
+        <a href="index.html">Inicio</a>
+        <div class="mobile-nav-group">
+            <button type="button" class="mobile-submenu-toggle" aria-expanded="false" aria-controls="mobileFormacionMenu">
+                <span>Formación</span>
+                <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="mobile-submenu" id="mobileFormacionMenu">
+                <a href="programas.html" data-nav-category="all">Ver toda la oferta</a>
+                <a href="programas.html?type=maestria">Maestrías</a>
+                <a href="programas.html?type=especializacion">Especializaciones</a>
+                <a href="programas.html?type=curso">Cursos intensivos</a>
+                <a href="programas.html?type=pasantia">Pasantías</a>
+            </div>
+        </div>
+        <a href="index.html#institucional">Institución</a>
+        <div class="mobile-nav-group">
+            <button type="button" class="mobile-submenu-toggle" aria-expanded="false" aria-controls="mobileIntlMenu">
+                <span>Internacional</span>
+                <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="mobile-submenu" id="mobileIntlMenu">
+                <a href="experiencia-internacional.html">Experiencia Internacional</a>
+                <a href="comunidad-academica.html">Comunidad Académica</a>
+            </div>
+        </div>
+        <a href="index.html#contacto" class="nav-cta">Contactanos</a>
+    </nav>
+
+    <!-- Hero -->
+    <section class="comunidad-hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <span class="hero-eyebrow">Colegas de todo el mundo · Red profesional activa</span>
+            <h1>Comunidad Académica</h1>
+            <p>Una red de especialistas en reproducción animal que comparte conocimiento, experiencias y vínculos profesionales más allá de las fronteras.</p>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <div class="breadcrumb-inner">
+                <a href="index.html">Inicio</a>
+                <span class="sep"><i class="fas fa-chevron-right fa-xs"></i></span>
+                <span class="current">Comunidad Académica</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ————— Intro + países ————— -->
+    <section class="section section--light">
+        <div class="container">
+            <h2 class="section-title">Un espacio donde se cruzan saberes</h2>
+            <p class="section-intro">Formarse en IRAC no es solo acceder a programas de excelencia: es integrarse a una comunidad activa de profesionales que comparten la misma pasión por la biotecnología reproductiva.</p>
+
+            <div class="countries-grid">
+                <div class="country-card">
+                    <div class="country-flag">🇦🇷</div>
+                    <div class="country-info">
+                        <h4>Argentina</h4>
+                        <p>Sede del instituto. Centro de referencia nacional e internacional</p>
+                    </div>
+                </div>
+                <div class="country-card">
+                    <div class="country-flag">🇲🇽</div>
+                    <div class="country-info">
+                        <h4>México</h4>
+                        <p>Pasantías y prácticas intensivas en reproducción bovina</p>
+                    </div>
+                </div>
+                <div class="country-card">
+                    <div class="country-flag">🇳🇿</div>
+                    <div class="country-info">
+                        <h4>Nueva Zelanda</h4>
+                        <p>Veterinarios que viajaron más de 11.000 km para formarse aquí</p>
+                    </div>
+                </div>
+                <div class="country-card">
+                    <div class="country-flag">🇧🇷</div>
+                    <div class="country-info">
+                        <h4>Brasil</h4>
+                        <p>Alumnos de posgrado y participantes en programas intensivos</p>
+                    </div>
+                </div>
+                <div class="country-card">
+                    <div class="country-flag">🇨🇴</div>
+                    <div class="country-info">
+                        <h4>Colombia</h4>
+                        <p>Participación en diplomaturas y viajes técnicos internacionales</p>
+                    </div>
+                </div>
+                <div class="country-card">
+                    <div class="country-flag">🇺🇾</div>
+                    <div class="country-info">
+                        <h4>Uruguay</h4>
+                        <p>Alumnos integrados en cohortes internacionales y viajes técnicos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ————— Value pillars ————— -->
+    <section class="section section--gray">
+        <div class="container">
+            <h2 class="section-title">Lo que construís al formarte aquí</h2>
+            <p class="section-intro">Más allá del título y los contenidos, formarte en IRAC te integra a una red que sigue activa mucho después de que terminan las clases.</p>
+
+            <div class="pillars-grid">
+                <div class="pillar-block">
+                    <div class="pillar-icon"><i class="fas fa-users"></i></div>
+                    <div class="pillar-text">
+                        <h3>Red profesional internacional</h3>
+                        <p>Compartís cursado y práctica real con colegas de distintos países. Esos vínculos se convierten en referencias, colaboraciones y proyectos futuros.</p>
+                    </div>
+                </div>
+                <div class="pillar-block">
+                    <div class="pillar-icon"><i class="fas fa-arrows-rotate"></i></div>
+                    <div class="pillar-text">
+                        <h3>Intercambio de experiencias reales</h3>
+                        <p>Cada alumno llega con su contexto productivo, sus desafíos y su perspectiva. Esa diversidad enriquece el aprendizaje de toda la cohorte.</p>
+                    </div>
+                </div>
+                <div class="pillar-block">
+                    <div class="pillar-icon"><i class="fas fa-earth-americas"></i></div>
+                    <div class="pillar-text">
+                        <h3>Visión comparada del sector</h3>
+                        <p>Accedés a una perspectiva global: cómo se trabaja en sistemas intensivos de California, en establecimientos de Nueva Zelanda o en campos mexicanos.</p>
+                    </div>
+                </div>
+                <div class="pillar-block">
+                    <div class="pillar-icon"><i class="fas fa-handshake"></i></div>
+                    <div class="pillar-text">
+                        <h3>Una comunidad que perdura</h3>
+                        <p>Los egresados del IRAC conforman una red activa. El vínculo con ex alumnos, docentes y referentes del sector se mantiene mucho más allá del cursado.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="big-quote-block">
+                <p>La pasión por la ciencia y la formación no tiene fronteras.</p>
+                <cite>— IRAC BIOGEN</cite>
+            </div>
+        </div>
+    </section>
+
+    <!-- ————— Experience teasers ————— -->
+    <section class="section section--light">
+        <div class="container">
+            <h2 class="section-title">Experiencias que lo demuestran</h2>
+            <p class="section-intro">Casos reales de intercambio y formación que dan cuenta de la dimensión internacional de nuestra comunidad.</p>
+
+            <div class="exp-teaser-grid">
+                <div class="exp-teaser-card">
+                    <div class="exp-teaser-img"
+                        style="background-image: url('https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&q=80&w=600');"></div>
+                    <div class="exp-teaser-body">
+                        <span class="novedad-tag"><i class="fas fa-plane"></i> Intercambio · México</span>
+                        <h3>Alumnos de México realizan prácticas en biotecnología reproductiva bovina</h3>
+                        <a href="experiencia-internacional.html#mexico" class="link-arrow">Ver experiencia <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="exp-teaser-card">
+                    <div class="exp-teaser-img"
+                        style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=600');"></div>
+                    <div class="exp-teaser-body">
+                        <span class="novedad-tag"><i class="fas fa-globe"></i> Internacional · Nueva Zelanda</span>
+                        <h3>Viajaron más de 11.000 km desde Nueva Zelanda para formarse en Argentina</h3>
+                        <a href="experiencia-internacional.html#nueva-zelanda" class="link-arrow">Ver experiencia <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="exp-teaser-card">
+                    <div class="exp-teaser-img"
+                        style="background-image: url('https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&q=80&w=600');"></div>
+                    <div class="exp-teaser-body">
+                        <span class="novedad-tag"><i class="fas fa-cow"></i> Diplomatura · California</span>
+                        <h3>Alumnos de la Diplomatura realizaron un viaje técnico a sistemas lecheros en California</h3>
+                        <a href="experiencia-internacional.html#california" class="link-arrow">Ver experiencia <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="comunidad-cta">
+        <div class="container">
+            <h2>Sumate a la comunidad IRAC</h2>
+            <p>Programas de posgrado con proyección internacional, práctica real y una red de colegas de todo el mundo. Las convocatorias 2026 están abiertas.</p>
+            <div class="comunidad-cta-actions">
+                <a href="programas.html" class="btn btn-primary btn-lg">
+                    <i class="fas fa-graduation-cap"></i> Ver programas
+                </a>
+                <a href="experiencia-internacional.html" class="btn btn-ghost btn-lg">
+                    <i class="fas fa-globe"></i> Experiencias internacionales
+                </a>
+                <a href="index.html#contacto" class="btn btn-ghost btn-lg">
+                    <i class="fas fa-envelope"></i> Contactanos
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <img src="./logo.png" alt="IRAC BIOGEN">
+                    </div>
+                    <p class="footer-tagline">Instituto de Reproducción Animal Córdoba.<br>Paraje Pozo del Tigre, Est.
+                        Gral. Paz,<br>CP 5145, Córdoba, Argentina.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/iracbiogen" target="_blank" rel="noopener noreferrer"
+                            aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/iracbiogen/" target="_blank" rel="noopener noreferrer"
+                            aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/channel/UCt8qyOt2uIhDBl2Qo9ObxJA" target="_blank"
+                            rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://wa.me/5493517592643?text=Hola%2C%20quiero%20información%20sobre%20los%20programas%20de%20IRAC%20BIOGEN"
+                            target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i
+                                class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Formación</h4>
+                    <ul>
+                        <li><a href="programas.html">Maestrías</a></li>
+                        <li><a href="programas.html">Especializaciones</a></li>
+                        <li><a href="programas.html">Cursos Intensivos</a></li>
+                        <li><a href="programas.html">Pasantías 2026</a></li>
+                        <li><a href="https://educacion.iracbiogen.com/" target="_blank" rel="noopener noreferrer">Aula
+                                Virtual <i class="fas fa-arrow-up-right-from-square fa-xs"></i></a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contacto</h4>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+5493517592643">+54 9 3517 59-2643</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+5490351589192">+549 0351-5891912</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:infoiracbiogen@gmail.com">infoiracbiogen@gmail.com</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <a href="https://wa.me/5493517592643?text=Hola%2C%20quiero%20información%20sobre%20los%20programas%20de%20IRAC%20BIOGEN"
+                            target="_blank" rel="noopener noreferrer">WhatsApp directo</a>
+                    </div>
+                    <div class="footer-contact-item"
+                        style="margin-top: var(--sp-3); padding-top: var(--sp-3); border-top: 1px solid rgba(255,255,255,0.08);">
+                        <i class="fas fa-house-chimney" style="color: var(--accent);"></i>
+                        <a href="posta-del-tigre.html">La Posta del Tigre</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-partners">
+                <p class="footer-partners__label">Nos acompañan</p>
+                <div class="footer-partners__logos" id="footerPartners"></div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 IRAC BIOGEN. Todos los derechos reservados.</span>
+                <span>
+                    <a href="posta-del-tigre.html">La Posta del Tigre</a> ·
+                    <a href="https://iracbiogen.com/politicas-de-privacidad/" target="_blank"
+                        rel="noopener noreferrer">Privacidad</a>
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="partners.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

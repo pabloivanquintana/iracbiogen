@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRAC BIOGEN — Formación de Posgrado en Reproducción Animal y Biotecnología</title>
+    <meta name="description"
+        content="Instituto de Reproducción Animal Córdoba. Maestrías, Especializaciones y Cursos Intensivos en Biotecnologías Reproductivas. Títulos avalados por UNC y acreditados por CONEAU.">
+    <link rel="stylesheet" href="styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,600;0,700;1,600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        crossorigin="anonymous">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="main-header" id="main-header">
+        <div class="container header-content">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="./logo.png" alt="IRAC BIOGEN — Instituto de Reproducción Animal Córdoba">
+                </a>
+            </div>
+            <nav class="main-nav" id="desktop-nav">
+                <ul>
+                    <li><a href="index.html" class="active">Inicio</a></li>
+                    <li class="nav-item nav-item--dropdown">
+                        <a href="programas.html" class="nav-dropdown-trigger" aria-haspopup="true">
+                            <span>Formación</span>
+                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </a>
+                        <div class="nav-dropdown-panel" aria-label="Submenu de formacion">
+                            <a href="programas.html" data-nav-category="all">Ver toda la oferta</a>
+                            <a href="programas.html?type=maestria" data-nav-category="maestria">Maestrías</a>
+                            <a href="programas.html?type=especializacion" data-nav-category="especializacion">Especializaciones</a>
+                            <a href="programas.html?type=curso" data-nav-category="curso">Cursos intensivos</a>
+                            <a href="programas.html?type=pasantia" data-nav-category="pasantia">Pasantías</a>
+                        </div>
+                    </li>
+                    <li><a href="#institucional">Institución</a></li>
+                    <li class="nav-item nav-item--dropdown">
+                        <a href="experiencia-internacional.html" class="nav-dropdown-trigger" aria-haspopup="true">
+                            <span>Internacional</span>
+                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </a>
+                        <div class="nav-dropdown-panel">
+                            <a href="experiencia-internacional.html">Experiencia Internacional</a>
+                            <a href="comunidad-academica.html">Comunidad Académica</a>
+                        </div>
+                    </li>
+                    <li><a href="#contacto" class="nav-cta">Contactanos</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <nav class="mobile-nav" id="mobile-nav">
+        <a href="index.html">Inicio</a>
+        <div class="mobile-nav-group">
+            <button type="button" class="mobile-submenu-toggle" aria-expanded="false" aria-controls="mobileFormacionMenu">
+                <span>Formación</span>
+                <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="mobile-submenu" id="mobileFormacionMenu">
+                <a href="programas.html" data-nav-category="all">Ver toda la oferta</a>
+                <a href="programas.html?type=maestria" data-nav-category="maestria">Maestrías</a>
+                <a href="programas.html?type=especializacion" data-nav-category="especializacion">Especializaciones</a>
+                <a href="programas.html?type=curso" data-nav-category="curso">Cursos intensivos</a>
+                <a href="programas.html?type=pasantia" data-nav-category="pasantia">Pasantías</a>
+            </div>
+        </div>
+        <a href="#institucional">Institución</a>
+        <div class="mobile-nav-group">
+            <button type="button" class="mobile-submenu-toggle" aria-expanded="false" aria-controls="mobileIntlMenu">
+                <span>Internacional</span>
+                <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="mobile-submenu" id="mobileIntlMenu">
+                <a href="experiencia-internacional.html">Experiencia Internacional</a>
+                <a href="comunidad-academica.html">Comunidad Académica</a>
+            </div>
+        </div>
+        <a href="#contacto" class="nav-cta">Contactanos</a>
+    </nav>
+
+    <!-- Hero -->
+    <section id="hero" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <span class="hero-eyebrow">Convocatorias 2026 abiertas · +30 años formando especialistas</span>
+            <h1>Formate con referentes en biotecnología reproductiva bovina</h1>
+            <p>Maestrías, especializaciones y entrenamientos intensivos con práctica real en campo, aval académico y proyección internacional.</p>
+            <div class="hero-actions">
+                <a href="programas.html" class="btn btn-primary btn-lg">
+                    <i class="fas fa-graduation-cap"></i> Ver programas disponibles
+                </a>
+                <a href="#contacto" class="btn btn-ghost btn-lg">
+                    <i class="fas fa-envelope"></i> Hablar con admisiones
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agenda académica -->
+    <section class="agenda-strip">
+        <div class="container">
+            <div class="agenda-strip-inner">
+                <div class="agenda-strip-heading">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>Agenda 2026</span>
+                </div>
+                <div class="agenda-strip-dates">
+                    <div class="agenda-date-item">
+                        <span class="agenda-date">20 jun</span>
+                        <span class="agenda-event">Cierre Especialización</span>
+                    </div>
+                    <div class="agenda-date-item">
+                        <span class="agenda-date">30 jun</span>
+                        <span class="agenda-event">Cierre Maestría</span>
+                    </div>
+                    <div class="agenda-date-item">
+                        <span class="agenda-date">15 jul</span>
+                        <span class="agenda-event">Inicio Pasantías</span>
+                    </div>
+                    <div class="agenda-date-item">
+                        <span class="agenda-date">20 jul</span>
+                        <span class="agenda-event">Inicio Especialización</span>
+                    </div>
+                </div>
+                <a href="programas.html" class="agenda-strip-cta">
+                    Ver todos los programas <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- XVI Simposio Internacional -->
+    <section class="simposio-section">
+        <div class="container">
+            <div id="simposioBlock"></div>
+        </div>
+    </section>
+
+    <!-- Oferta Académica -->
+    <section id="categorias" class="section section--light">
+        <div class="container">
+            <h2 class="section-title">Nuestra Oferta Académica</h2>
+            <p class="section-intro">Programas diseñados para médicos veterinarios y profesionales del agro que buscan especialización técnica, científica y aplicada.</p>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-icon"><i class="fas fa-university"></i></div>
+                    <h3>Maestrías</h3>
+                    <p>Programas de posgrado con aval universitario para profundizar en reproducción y producción bovina con enfoque técnico y aplicado.</p>
+                    <a href="programas.html?type=maestria" class="link-arrow">Ver maestrías <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon"><i class="fas fa-award"></i></div>
+                    <h3>Especializaciones</h3>
+                    <p>Formación acreditada con trayectoria, prestigio académico y aplicación directa en el trabajo profesional.</p>
+                    <a href="programas.html?type=especializacion" class="link-arrow">Ver especialización <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon"><i class="fas fa-flask"></i></div>
+                    <h3>Cursos Intensivos</h3>
+                    <p>Entrenamiento práctico en campo y laboratorio con cupos reducidos, aprendizaje directo y aplicación inmediata.</p>
+                    <a href="programas.html?type=curso" class="link-arrow">Ver cursos <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon"><i class="fas fa-seedling"></i></div>
+                    <h3>Pasantías</h3>
+                    <p>Experiencia inmersiva con mentoría, práctica real y participación activa en el ecosistema técnico de IRAC.</p>
+                    <a href="programas.html?type=pasantia" class="link-arrow">Ver pasantías <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programas Destacados -->
+    <section id="programas-destacados" class="section section--gray">
+        <div class="container">
+            <h2 class="section-title">Programas Destacados</h2>
+            <p class="section-intro">Conocé algunas de las propuestas más elegidas por profesionales de Argentina y Latinoamérica.</p>
+            <div class="programs-grid">
+                <div class="program-card">
+                    <div class="program-img"
+                        style="background-image: url('images/hero-vacas-lab.jpg');">
+                        <div class="program-img-badge">
+                            <span class="badge badge-blue">Maestría · UNC</span>
+                        </div>
+                    </div>
+                    <div class="program-info">
+                        <h3>Maestría en Biotecnologías Reproductivas en Bovinos</h3>
+                        <div class="program-meta">
+                            <p><i class="fas fa-display"></i> Híbrida (70% online / 30% presencial)</p>
+                            <p><i class="far fa-clock"></i> 2 años</p>
+                            <p><i class="fas fa-location-dot"></i> Gral. Paz, Córdoba</p>
+                        </div>
+                        <div class="program-card-urgency">
+                            <i class="fas fa-hourglass-half"></i> Inscripciones hasta el 30 de junio o hasta completar cupos
+                        </div>
+                        <a href="programa-detalle.html" class="btn-card">Ver programa completo</a>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <div class="program-img"
+                        style="background-image: url('images/Trabajos-finales-Especializacion-en-Reproduccion-Bovina.jpg');">
+                        <div class="program-img-badge">
+                            <span class="badge badge-yellow">CONEAU "A"</span>
+                        </div>
+                    </div>
+                    <div class="program-info">
+                        <h3>Especialización en Reproducción Bovina</h3>
+                        <div class="program-meta">
+                            <p><i class="fas fa-building-columns"></i> Presencial</p>
+                            <p><i class="far fa-clock"></i> 2 años · 480 hs.</p>
+                            <p><i class="fas fa-users"></i> Cohorte 2026 · Cupos limitados</p>
+                        </div>
+                        <div class="program-card-urgency">
+                            <i class="fas fa-hourglass-half"></i> Cierre: 20 de junio · Inicio de cursado: 20 de julio
+                        </div>
+                        <a href="programa-detalle.html" class="btn-card">Ver programa completo</a>
+                    </div>
+                </div>
+                <div class="program-card">
+                    <div class="program-img"
+                        style="background-image: url('images/Gemini_Generated_Image_hsmvq5hsmvq5hsmv.png');">
+                        <div class="program-img-badge">
+                            <span class="badge badge-green">Pasantía · Abierta</span>
+                        </div>
+                    </div>
+                    <div class="program-info">
+                        <h3>Pasantía Profesional en Biotecnologías Reproductivas</h3>
+                        <div class="program-meta">
+                            <p><i class="fas fa-location-dot"></i> Presencial · Gral. Paz, Córdoba</p>
+                            <p><i class="far fa-calendar"></i> Jul – Dic 2026</p>
+                            <p><i class="fas fa-user-tie"></i> Con acompañamiento de mentor</p>
+                        </div>
+                        <div class="program-card-urgency">
+                            <i class="fas fa-calendar-check"></i> Inicio: 15 de julio · Experiencia inmersiva julio–diciembre
+                        </div>
+                        <a href="programa-detalle.html" class="btn-card">Ver programa completo</a>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align:center; margin-top: var(--sp-7);">
+                <a href="programas.html" class="btn btn-outline btn-lg">
+                    Ver todos los programas <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Block -->
+    <section id="institucional" class="trust-block section">
+        <div class="container">
+            <h2>Más de 30 años formando especialistas en reproducción bovina</h2>
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <span class="trust-number">+30</span>
+                    <h4>Años de trayectoria</h4>
+                    <p>Desde 1993, IRAC forma profesionales en biotecnologías reproductivas con impacto en Argentina y Latinoamérica.</p>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-item-icon"><i class="fas fa-earth-americas"></i></div>
+                    <h4>Alcance internacional</h4>
+                    <p>Profesionales de distintos países eligen IRAC para capacitarse, actualizarse y vivir una experiencia formativa aplicada.</p>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-item-icon"><i class="fas fa-flask"></i></div>
+                    <h4>Práctica real</h4>
+                    <p>Formación con aplicación en laboratorio, campo y situaciones reales de trabajo desde el primer momento.</p>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-item-icon"><i class="fas fa-certificate"></i></div>
+                    <h4>Aval académico</h4>
+                    <p>Formación con aval académico, trayectoria y estándares reconocidos en el sector.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- La Posta del Tigre — Diferencial de experiencia -->
+    <section class="posta-home-block">
+        <div class="container">
+            <div class="posta-home-inner">
+                <div class="posta-home-emblem">
+                    <i class="fas fa-house-chimney"></i>
+                </div>
+                <div class="posta-home-content">
+                    <span class="section-kicker"><i class="fas fa-map-marker-alt"></i> Experiencia en campus</span>
+                    <h2>Formate sin importar dónde estés</h2>
+                    <p>Si venís desde otra provincia o país, podés alojarte en <strong>La Posta del Tigre</strong>, la residencia universitaria de IRAC BIOGEN dentro del campus académico. Una forma de vivir la experiencia de formación de manera completa.</p>
+                    <ul class="posta-home-points">
+                        <li><i class="fas fa-circle-check"></i> Residencia en el campus, a metros del laboratorio</li>
+                        <li><i class="fas fa-circle-check"></i> Disponible para módulos presenciales y cursos intensivos</li>
+                        <li><i class="fas fa-circle-check"></i> Alumnos de distintas provincias y del exterior</li>
+                    </ul>
+                </div>
+                <div class="posta-home-cta">
+                    <a href="posta-del-tigre.html" class="btn btn-outline">
+                        <i class="fas fa-house-chimney"></i> Conocer la residencia
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Novedades -->
+    <section id="novedades" class="novedades-section section">
+        <div class="container">
+            <h2 class="section-title">Experiencia internacional y comunidad académica</h2>
+            <p class="section-intro">Alumnos y profesionales de distintos países eligen IRAC para formarse, actualizarse y compartir una experiencia profesional única.</p>
+            <div class="novedades-grid">
+                <article class="novedad-card">
+                    <span class="novedad-tag"><i class="fas fa-plane"></i> Intercambio · México</span>
+                    <h3>Alumnos de México realizan prácticas en biotecnología reproductiva bovina en el IRAC</h3>
+                    <a href="experiencia-internacional.html#mexico" class="link-arrow">Leer más <i
+                            class="fas fa-arrow-right"></i></a>
+                </article>
+                <article class="novedad-card">
+                    <span class="novedad-tag"><i class="fas fa-globe"></i> Internacional · Nueva Zelanda</span>
+                    <h3>Viajaron más de 11.000 km desde Nueva Zelanda para formarse en Argentina</h3>
+                    <a href="experiencia-internacional.html#nueva-zelanda" class="link-arrow">Leer más <i
+                            class="fas fa-arrow-right"></i></a>
+                </article>
+                <article class="novedad-card">
+                    <span class="novedad-tag"><i class="fas fa-cow"></i> Diplomatura · California</span>
+                    <h3>Alumnos de la Diplomatura realizaron un viaje técnico a sistemas lecheros en California</h3>
+                    <a href="experiencia-internacional.html#california" class="link-arrow">Leer más <i
+                            class="fas fa-arrow-right"></i></a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+         FORMULARIO INTEGRADO DE CONVERSIÓN
+    ====================================================== -->
+    <section id="contacto" class="section section--gray">
+        <div class="container">
+            <div class="contact-dual-layout">
+
+                <!-- Info lateral izquierda -->
+                <div class="contact-info-panel">
+                    <span class="badge badge-blue" style="margin-bottom: var(--sp-4); display:inline-block;">Admisiones abiertas · Cierres en junio</span>
+                    <h2>Recibí asesoramiento personalizado</h2>
+                    <p>Te ayudamos a elegir el programa ideal según tu perfil. Algunas convocatorias cierran en junio o hasta completar cupos.</p>
+
+                    <div class="contact-info-items">
+                        <div class="contact-info-item">
+                            <i class="fas fa-user"></i>
+                            <div>
+                                <strong>María Emilia Cejas</strong>
+                                <span>Coordinación de Admisiones</span>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:infoiracbiogen@gmail.com">infoiracbiogen@gmail.com</a>
+                        </div>
+                        <div class="contact-info-item">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+5493517592643">+54 9 3517 59-2643</a>
+                        </div>
+                        <div class="contact-info-item">
+                            <i class="fab fa-whatsapp" style="color:var(--whatsapp);"></i>
+                            <a href="https://wa.me/5493517592643?text=Hola%2C%20quiero%20información%20sobre%20los%20programas%20de%20IRAC%20BIOGEN"
+                                target="_blank" rel="noopener noreferrer">WhatsApp directo</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-mode-switcher">
+                        <button type="button" class="mode-btn mode-btn--active" id="modeInfoBtn"
+                            onclick="setFormMode('informacion')">
+                            <i class="fas fa-circle-info"></i> Quiero información
+                        </button>
+                        <button type="button" class="mode-btn" id="modeInscBtn" onclick="setFormMode('inscripcion')">
+                            <i class="fas fa-file-signature"></i> Preinscribirme
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Formulario -->
+                <div class="contact-form-block" id="formulario-consulta" style="border:none; padding: 0 !important;">
+                    <div class="form-header" id="formHeader">
+                        <i class="fas fa-envelope-open-text form-header-icon"></i>
+                        <div>
+                            <h2 id="formTitle">Recibí información completa</h2>
+                            <p id="formSubtitle">Completá el formulario y un asesor te contacta en menos de 24 horas.</p>
+                        </div>
+                    </div>
+                    <form id="consultaForm" class="consulta-form" novalidate>
+                        <input type="hidden" id="cf-modo" name="modo" value="informacion">
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="cf-nombre">Nombre completo *</label>
+                                <input type="text" id="cf-nombre" name="nombre" placeholder="Tu nombre y apellido"
+                                    required>
+                                <span class="field-error" id="err-nombre"></span>
+                            </div>
+                            <div class="form-field">
+                                <label for="cf-email">Email *</label>
+                                <input type="email" id="cf-email" name="email" placeholder="tu@email.com" required>
+                                <span class="field-error" id="err-email"></span>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="cf-telefono">Teléfono / WhatsApp</label>
+                                <input type="tel" id="cf-telefono" name="telefono" placeholder="+54 9 ...">
+                            </div>
+                            <div class="form-field">
+                                <label for="cf-programa">Programa de interés</label>
+                                <select id="cf-programa" name="programa">
+                                    <option value="maestria-biotecnologias">Maestría en Biotecnologías Reproductivas
+                                    </option>
+                                    <option value="especializacion-repro">Especialización en Reproducción Bovina
+                                    </option>
+                                    <option value="maestria-carne">Maestría en Producción de Carne Bovina</option>
+                                    <option value="pasantia-2026">Pasantía Profesional 2026</option>
+                                    <option value="cursos-intensivos">Cursos Intensivos</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-field">
+                            <label for="cf-mensaje">Mensaje (opcional)</label>
+                            <textarea id="cf-mensaje" name="mensaje" rows="3"
+                                placeholder="Contanos brevemente tu perfil o consulta..."></textarea>
+                        </div>
+                        <div class="form-footer">
+                            <p class="form-privacy"><i class="fas fa-shield-halved"></i> Tu información es confidencial.
+                            </p>
+                            <div style="display:flex; gap: var(--sp-3); flex-wrap: wrap;">
+                                <button type="submit" class="btn btn-primary btn-lg" id="btnEnviar">
+                                    <i class="fas fa-paper-plane"></i> <span id="btnEnviarLabel">Quiero recibir información</span>
+                                </button>
+                                <a id="waBtnInversion"
+                                    href="https://wa.me/5493517592643?text=Hola%2C%20quiero%20información%20sobre%20los%20programas%20de%20IRAC%20BIOGEN"
+                                    target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg">
+                                    <i class="fab fa-whatsapp"></i> WhatsApp
+                                </a>
+                            </div>
+                            <p style="font-size: var(--fs-xs); color: var(--text-muted); margin-top: var(--sp-3); line-height: 1.6;">
+                                <i class="fas fa-circle-check" style="color: var(--success); margin-right: 4px;"></i> Sin compromiso &nbsp;·&nbsp;
+                                <i class="fas fa-circle-check" style="color: var(--success); margin-right: 4px;"></i> Respuesta en menos de 24 hs &nbsp;·&nbsp;
+                                <i class="fas fa-circle-check" style="color: var(--success); margin-right: 4px;"></i> Información sobre costos, requisitos y modalidad
+                            </p>
+                        </div>
+                        <div id="form-success" class="form-success-msg" style="display:none;">
+                            <i class="fas fa-circle-check"></i>
+                            <div>
+                                <strong>¡Solicitud enviada!</strong>
+                                <p>Un asesor de admisiones se comunicará con vos en menos de 24 horas.</p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <img src="./logo.png" alt="IRAC BIOGEN">
+                    </div>
+                    <p class="footer-tagline">Instituto de Reproducción Animal Córdoba.<br>Paraje Pozo del Tigre, Est.
+                        Gral. Paz,<br>CP 5145, Córdoba, Argentina.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/iracbiogen" target="_blank" rel="noopener noreferrer"
+                            aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/iracbiogen/" target="_blank" rel="noopener noreferrer"
+                            aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/channel/UCt8qyOt2uIhDBl2Qo9ObxJA" target="_blank"
+                            rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://wa.me/5493517592643?text=Hola%2C%20quiero%20información%20sobre%20los%20programas%20de%20IRAC%20BIOGEN"
+                            target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i
+                                class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Formación</h4>
+                    <ul>
+                        <li><a href="programas.html">Maestrías</a></li>
+                        <li><a href="programas.html">Especializaciones</a></li>
+                        <li><a href="programas.html">Cursos Intensivos</a></li>
+                        <li><a href="programas.html">Pasantías 2026</a></li>
+                        <li><a href="https://educacion.iracbiogen.com/" target="_blank" rel="noopener noreferrer">Aula
+                                Virtual <i class="fas fa-arrow-up-right-from-square fa-xs"></i></a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contacto</h4>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+5493517592643">+54 9 3517 59-2643</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+5490351589192">+549 0351-5891912</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:infoiracbiogen@gmail.com">infoiracbiogen@gmail.com</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <a href="https://wa.me/5493517592643?text=Hola%2C%20quiero%20información%20sobre%20los%20programas%20de%20IRAC%20BIOGEN"
+                            target="_blank" rel="noopener noreferrer">WhatsApp directo</a>
+                    </div>
+                    <div class="footer-contact-item"
+                        style="margin-top: var(--sp-3); padding-top: var(--sp-3); border-top: 1px solid rgba(255,255,255,0.08);">
+                        <i class="fas fa-house-chimney" style="color: var(--accent);"></i>
+                        <a href="posta-del-tigre.html">La Posta del Tigre</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Nos acompañan -->
+            <div class="footer-partners">
+                <p class="footer-partners__label">Nos acompañan</p>
+                <div class="footer-partners__logos" id="footerPartners"></div>
+            </div>
+
+            <div class="footer-bottom">
+                <span>&copy; 2026 IRAC BIOGEN. Todos los derechos reservados.</span>
+                <span>
+                    <a href="posta-del-tigre.html">La Posta del Tigre</a> ·
+                    <a href="https://iracbiogen.com/politicas-de-privacidad/" target="_blank"
+                        rel="noopener noreferrer">Privacidad</a>
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="partners.js"></script>
+    <script src="simposio.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

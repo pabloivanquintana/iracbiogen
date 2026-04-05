@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiencia Internacional — IRAC BIOGEN</title>
+    <meta name="description"
+        content="Profesionales de todo el mundo eligen IRAC para formarse en biotecnología reproductiva. Conocé las experiencias internacionales que definen nuestra comunidad.">
+    <link rel="stylesheet" href="styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,600;0,700;1,600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        crossorigin="anonymous">
+
+    <style>
+        /* ————— Hero ————— */
+        .intl-hero {
+            position: relative;
+            background-image: url('https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&q=80&w=2000');
+            background-size: cover;
+            background-position: center 40%;
+            color: var(--bg-white);
+            text-align: center;
+            padding: var(--sp-10) 0;
+            min-height: 480px;
+            display: flex;
+            align-items: center;
+        }
+
+        .intl-hero .hero-overlay {
+            background: linear-gradient(160deg, rgba(4, 22, 33, 0.90) 0%, rgba(11, 59, 89, 0.74) 100%);
+        }
+
+        .intl-hero h1 {
+            font-size: var(--fs-4xl);
+            color: var(--bg-white);
+            margin-bottom: var(--sp-4);
+        }
+
+        .intl-hero p {
+            font-size: var(--fs-lg);
+            opacity: 0.88;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ————— Impact strip ————— */
+        .impact-strip {
+            background: var(--primary);
+            color: var(--bg-white);
+            padding: var(--sp-7) 0;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--sp-5);
+            text-align: center;
+        }
+
+        .impact-item strong {
+            display: block;
+            font-size: var(--fs-3xl);
+            font-family: var(--font-heading);
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: var(--sp-2);
+        }
+
+        .impact-item span {
+            font-size: var(--fs-sm);
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        /* ————— Story layout ————— */
+        .story-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--sp-8);
+            align-items: center;
+        }
+
+        .story-layout.reverse {
+            direction: rtl;
+        }
+
+        .story-layout.reverse > * {
+            direction: ltr;
+        }
+
+        .story-img {
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            aspect-ratio: 4 / 3;
+        }
+
+        .story-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .story-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--sp-2);
+            background: var(--bg-mid);
+            color: var(--primary);
+            font-size: var(--fs-sm);
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: var(--radius-pill);
+            margin-bottom: var(--sp-4);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .story-content h2 {
+            font-size: var(--fs-xl);
+            color: var(--text-main);
+            margin-bottom: var(--sp-4);
+            line-height: 1.3;
+        }
+
+        .story-content p {
+            color: var(--text-body);
+            line-height: 1.75;
+            margin-bottom: var(--sp-4);
+        }
+
+        .story-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ————— Story facts sidebar ————— */
+        .story-facts {
+            background: var(--bg-light);
+            border-left: 3px solid var(--accent);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            padding: var(--sp-5);
+            margin-top: var(--sp-5);
+        }
+
+        .story-facts h4 {
+            font-size: var(--fs-sm);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-light);
+            margin-bottom: var(--sp-3);
+        }
+
+        .story-fact-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--sp-2);
+        }
+
+        .story-fact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--sp-3);
+            font-size: var(--fs-sm);
+            color: var(--text-body);
+        }
+
+        .story-fact-item i {
+            color: var(--primary);
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        /* ————— Quote block ————— */
+        .story-quote {
+            background: var(--primary);
+            color: var(--bg-white);
+            border-radius: var(--radius-lg);
+            padding: var(--sp-6) var(--sp-6) var(--sp-6) var(--sp-7);
+            margin-top: var(--sp-5);
+            position: relative;
+        }
+
+        .story-quote::before {
+            content: '\201C';
+            font-family: var(--font-heading);
+            font-size: 5rem;
+            color: var(--accent);
+            position: absolute;
+            top: -8px;
+            left: var(--sp-4);
+            line-height: 1;
+            opacity: 0.55;
+        }
+
+        .story-quote p {
+            color: rgba(255, 255, 255, 0.92);
+            font-style: italic;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* ————— Training area cards ————— */
+        .training-areas {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--sp-4);
+            margin-top: var(--sp-5);
+        }
+
+        .training-area-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: var(--sp-5);
+            text-align: center;
+        }
+
+        .ta-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--bg-mid);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--sp-3);
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        .training-area-card h4 {
+            font-size: var(--fs-sm);
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: var(--sp-2);
+        }
+
+        .training-area-card p {
+            font-size: var(--fs-xs);
+            color: var(--text-light);
+            line-height: 1.55;
+            margin: 0;
+        }
+
+        /* ————— Page CTA ————— */
+        .intl-cta {
+            background: var(--primary);
+            color: var(--bg-white);
+            text-align: center;
+            padding: var(--sp-9) 0;
+        }
+
+        .intl-cta h2 {
+            color: var(--bg-white);
+            font-size: var(--fs-2xl);
+            margin-bottom: var(--sp-4);
+        }
+
+        .intl-cta p {
+            opacity: 0.85;
+            font-size: var(--fs-md);
+            max-width: 540px;
+            margin: 0 auto var(--sp-6);
+        }
+
+        .intl-cta-actions {
+            display: flex;
+            gap: var(--sp-4);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ————— Responsive ————— */
+        @media (max-width: 900px) {
+            .impact-grid { grid-template-columns: repeat(2, 1fr); }
+            .story-layout,
+            .story-layout.reverse { grid-template-columns: 1fr; direction: ltr; }
+            .training-areas { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 540px) {
+            .intl-hero h1 { font-size: var(--fs-2xl); }
+            .training-areas { grid-template-columns: 1fr; }
+            .impact-grid { grid-template-columns: repeat(2, 1fr); gap: var(--sp-4); }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="main-header" id="main-header">
+        <div class="container header-content">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="./logo.png" alt="IRAC BIOGEN — Instituto de Reproducción Animal Córdoba">
+                </a>
+            </div>
+            <nav class="main-nav" id="desktop-nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li class="nav-item nav-item--dropdown">
+                        <a href="programas.html" class="nav-dropdown-trigger" aria-haspopup="true">
+                            <span>Formación</span>
+                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </a>
+                        <div class="nav-dropdown-panel" aria-label="Submenu de formacion">
+                            <a href="programas.html" data-nav-category="all">Ver toda la oferta</a>
+                            <a href="programas.html?type=maestria" data-nav-category="maestria">Maestrías</a>
+                            <a href="programas.html?type=especializacion" data-nav-category="especializacion">Especializaciones</a>
+                            <a href="programas.html?type=curso" data-nav-category="curso">Cursos intensivos</a>
+                            <a href="programas.html?type=pasantia" data-nav-category="pasantia">Pasantías</a>
+                        </div>
+                    </li>
+                    <li><a href="index.html#institucional">Institución</a></li>
+                    <li class="nav-item nav-item--dropdown">
+                        <a href="experiencia-internacional.html" class="nav-dropdown-trigger active" aria-haspopup="true">
+                            <span>Internacional</span>
+                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </a>
+                        <div class="nav-dropdown-panel">
+                            <a href="experiencia-internacional.html">Experiencia Internacional</a>
+                            <a href="comunidad-academica.html">Comunidad Académica</a>
+                        </div>
+                    </li>
+                    <li><a href="index.html#contacto" class="nav-cta">Contactanos</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <nav class="mobile-nav" id="mobile-nav">
+        <a href="index.html">Inicio</a>
+        <div class="mobile-nav-group">
+            <button type="button" class="mobile-submenu-toggle" aria-expanded="false" aria-controls="mobileFormacionMenu">
+                <span>Formación</span>
+                <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="mobile-submenu" id="mobileFormacionMenu">
+                <a href="programas.html" data-nav-category="all">Ver toda la oferta</a>
+                <a href="programas.html?type=maestria">Maestrías</a>
+                <a href="programas.html?type=especializacion">Especializaciones</a>
+                <a href="programas.html?type=curso">Cursos intensivos</a>
+                <a href="programas.html?type=pasantia">Pasantías</a>
+            </div>
+        </div>
+        <a href="index.html#institucional">Institución</a>
+        <div class="mobile-nav-group">
+            <button type="button" class="mobile-submenu-toggle" aria-expanded="false" aria-controls="mobileIntlMenu">
+                <span>Internacional</span>
+                <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="mobile-submenu" id="mobileIntlMenu">
+                <a href="experiencia-internacional.html">Experiencia Internacional</a>
+                <a href="comunidad-academica.html">Comunidad Académica</a>
+            </div>
+        </div>
+        <a href="index.html#contacto" class="nav-cta">Contactanos</a>
+    </nav>
+
+    <!-- Hero -->
+    <section class="intl-hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <span class="hero-eyebrow">Formación sin fronteras · Intercambio profesional real</span>
+            <h1>Experiencia Internacional</h1>
+            <p>Profesionales de todo el mundo eligen IRAC para formarse en biotecnología reproductiva bovina. Conocé las experiencias que definen nuestra proyección global.</p>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <div class="breadcrumb-inner">
+                <a href="index.html">Inicio</a>
+                <span class="sep"><i class="fas fa-chevron-right fa-xs"></i></span>
+                <span class="current">Experiencia Internacional</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Impact strip -->
+    <div class="impact-strip">
+        <div class="container">
+            <div class="impact-grid">
+                <div class="impact-item">
+                    <strong>+10</strong>
+                    <span>Países de origen</span>
+                </div>
+                <div class="impact-item">
+                    <strong>+30</strong>
+                    <span>Años de trayectoria</span>
+                </div>
+                <div class="impact-item">
+                    <strong>11.000 km</strong>
+                    <span>Máxima distancia recorrida</span>
+                </div>
+                <div class="impact-item">
+                    <strong>3 continentes</strong>
+                    <span>Con intercambios activos</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Intro -->
+    <section class="section section--light">
+        <div class="container">
+            <h2 class="section-title">Historias que cruzan fronteras</h2>
+            <p class="section-intro">Estas experiencias no son casos aislados. Representan la proyección real de IRAC como centro de formación de referencia internacional en reproducción animal.</p>
+        </div>
+    </section>
+
+    <!-- ————— Story 1: México ————— -->
+    <section id="mexico" class="section section--gray">
+        <div class="container">
+            <div class="story-layout">
+                <div class="story-img">
+                    <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&q=80&w=800"
+                        alt="Prácticas en laboratorio de reproducción bovina">
+                </div>
+                <div class="story-content">
+                    <span class="story-badge"><i class="fas fa-plane-arrival"></i> Intercambio · México</span>
+                    <h2>Alumnos de México realizan prácticas en biotecnología reproductiva bovina</h2>
+                    <p>Un grupo de profesionales mexicanos completó un programa de entrenamiento intensivo en las instalaciones del IRAC. La propuesta combinó formación teórica y práctica en tres áreas clave de la reproducción bovina, con docentes especialistas del instituto.</p>
+                    <div class="training-areas">
+                        <div class="training-area-card">
+                            <div class="ta-icon"><i class="fas fa-microscope"></i></div>
+                            <h4>Congelamiento de semen</h4>
+                            <p>Preparación de laboratorio, evaluación espermática y control de calidad post-congelamiento</p>
+                        </div>
+                        <div class="training-area-card">
+                            <div class="ta-icon"><i class="fas fa-flask"></i></div>
+                            <h4>Aspiración folicular y OPU</h4>
+                            <p>Clasificación de ovocitos, técnicas de aspiración y manejo de equipamiento especializado</p>
+                        </div>
+                        <div class="training-area-card">
+                            <div class="ta-icon"><i class="fas fa-syringe"></i></div>
+                            <h4>Transferencia de embriones</h4>
+                            <p>Selección de receptoras, clasificación de cuerpo lúteo y transferencia no quirúrgica</p>
+                        </div>
+                    </div>
+                    <div class="story-facts">
+                        <h4>Datos del programa</h4>
+                        <div class="story-fact-list">
+                            <div class="story-fact-item">
+                                <i class="fas fa-map-pin fa-sm"></i>
+                                <span>IRAC + Campo Experimental (trabajo a campo)</span>
+                            </div>
+                            <div class="story-fact-item">
+                                <i class="fas fa-graduation-cap fa-sm"></i>
+                                <span>Programa: Especialización en Reproducción Bovina</span>
+                            </div>
+                            <div class="story-fact-item">
+                                <i class="fas fa-users fa-sm"></i>
+                                <span>Docentes: Dr. Salvador Andrada · Dr. Andrés Tríbulo · Dr. José María Oviedo</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ————— Story 2: Nueva Zelanda ————— -->
+    <section id="nueva-zelanda" class="section section--light">
+        <div class="container">
+            <div class="story-layout reverse">
+                <div class="story-img">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800"
+                        alt="Veterinarios internacionales en intercambio profesional">
+                </div>
+                <div class="story-content">
+                    <span class="story-badge"><i class="fas fa-globe"></i> Internacional · Nueva Zelanda</span>
+                    <h2>Más de 11.000 km para formarse en Argentina</h2>
+                    <p>Dos médicos veterinarios provenientes de Nueva Zelanda viajaron exclusivamente al IRAC para especializarse en reproducción animal. El instituto diseñó un programa personalizado para incorporar nuevas herramientas técnicas a su práctica profesional.</p>
+                    <p>La propuesta incluyó sesiones teórico-prácticas de colecta de embriones, clasificación de ovocitos y trabajo a campo en Puesto Jacinto, Villa del Totoral.</p>
+                    <div class="story-quote">
+                        <p>Este intercambio permitió, más allá de la formación profesional, generar un valioso flujo de experiencias y conocimientos entre colegas de distintas latitudes, enriqueciendo a los visitantes y a nuestro equipo.</p>
+                    </div>
+                    <div class="story-facts" style="margin-top: var(--sp-5);">
+                        <h4>Datos del intercambio</h4>
+                        <div class="story-fact-list">
+                            <div class="story-fact-item">
+                                <i class="fas fa-route fa-sm"></i>
+                                <span>Distancia recorrida: más de 11.000 km</span>
+                            </div>
+                            <div class="story-fact-item">
+                                <i class="fas fa-map-pin fa-sm"></i>
+                                <span>IRAC + Puesto Jacinto, Villa del Totoral</span>
+                            </div>
+                            <div class="story-fact-item">
+                                <i class="fas fa-briefcase fa-sm"></i>
+                                <span>Programa personalizado para profesionales en ejercicio</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ————— Story 3: California ————— -->
+    <section id="california" class="section section--gray">
+        <div class="container">
+            <div class="story-layout">
+                <div class="story-img">
+                    <img src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&q=80&w=800"
+                        alt="Sistemas lecheros intensivos en California">
+                </div>
+                <div class="story-content">
+                    <span class="story-badge"><i class="fas fa-cow"></i> Diplomatura · California, EE.UU.</span>
+                    <h2>Una mirada integral desde el campo: viaje técnico a sistemas lecheros en California</h2>
+                    <p>Alumnos de la Diplomatura en Gestión Integral de Sistemas Lecheros Intensivos —de Argentina, Uruguay y Colombia— realizaron un viaje técnico de tres días a la región de Visalia, California, visitando ocho establecimientos con distintos niveles tecnológicos.</p>
+                    <p>El grupo fue acompañado por el Dr. José Eduardo Santos de la Universidad de Florida, referente internacional en sistemas lecheros californianos.</p>
+                    <div class="story-facts">
+                        <h4>Áreas abordadas</h4>
+                        <div class="story-fact-list">
+                            <div class="story-fact-item">
+                                <i class="fas fa-check fa-sm"></i>
+                                <span>Crianza y manejo de terneras</span>
+                            </div>
+                            <div class="story-fact-item">
+                                <i class="fas fa-check fa-sm"></i>
+                                <span>Gestión reproductiva y nutricional</span>
+                            </div>
+                            <div class="story-fact-item">
+                                <i class="fas fa-check fa-sm"></i>
+                                <span>Control sanitario en parto y ordeño</span>
+                            </div>
+                            <div class="story-fact-item">
+                                <i class="fas fa-check fa-sm"></i>
+                                <span>Planificación genética y gestión de personal</span>
+                            </div>
+                            <div class="story-fact-item">
+                                <i class="fas fa-check fa-sm"></i>
+                                <span>Biodigestores y manejo de efluentes</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="story-quote" style="margin-top: var(--sp-5);">
+                        <p>La eficiencia no siempre está ligada a la tecnología de punta, sino a la sistematización de procesos, el registro correcto de datos y la toma de decisiones informadas.</p>
+                    </div>
+                    <div style="margin-top: var(--sp-4);">
+                        <div class="story-fact-list">
+                            <div class="story-fact-item">
+                                <i class="fas fa-users fa-sm" style="color: var(--primary);"></i>
+                                <span>Alumnos de Argentina, Uruguay y Colombia</span>
+                            </div>
+                            <div class="story-fact-item">
+                                <i class="fas fa-map-marker-alt fa-sm" style="color: var(--primary);"></i>
+                                <span>Visalia, California · 8 establecimientos visitados</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="intl-cta">
+        <div class="container">
+            <h2>¿Querés ser parte de esta comunidad?</h2>
+            <p>Formarte en IRAC es integrarte a una red de profesionales que trasciende fronteras. Conocé los programas y sumate a la próxima cohorte.</p>
+            <div class="intl-cta-actions">
+                <a href="programas.html" class="btn btn-primary btn-lg">
+                    <i class="fas fa-graduation-cap"></i> Ver programas
+                </a>
+                <a href="comunidad-academica.html" class="btn btn-ghost btn-lg">
+                    <i class="fas fa-users"></i> Comunidad académica
+                </a>
+                <a href="index.html#contacto" class="btn btn-ghost btn-lg">
+                    <i class="fas fa-envelope"></i> Contactanos
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <img src="./logo.png" alt="IRAC BIOGEN">
+                    </div>
+                    <p class="footer-tagline">Instituto de Reproducción Animal Córdoba.<br>Paraje Pozo del Tigre, Est.
+                        Gral. Paz,<br>CP 5145, Córdoba, Argentina.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/iracbiogen" target="_blank" rel="noopener noreferrer"
+                            aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/iracbiogen/" target="_blank" rel="noopener noreferrer"
+                            aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/channel/UCt8qyOt2uIhDBl2Qo9ObxJA" target="_blank"
+                            rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://wa.me/5493517592643?text=Hola%2C%20quiero%20información%20sobre%20los%20programas%20de%20IRAC%20BIOGEN"
+                            target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i
+                                class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Formación</h4>
+                    <ul>
+                        <li><a href="programas.html">Maestrías</a></li>
+                        <li><a href="programas.html">Especializaciones</a></li>
+                        <li><a href="programas.html">Cursos Intensivos</a></li>
+                        <li><a href="programas.html">Pasantías 2026</a></li>
+                        <li><a href="https://educacion.iracbiogen.com/" target="_blank" rel="noopener noreferrer">Aula
+                                Virtual <i class="fas fa-arrow-up-right-from-square fa-xs"></i></a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contacto</h4>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+5493517592643">+54 9 3517 59-2643</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+5490351589192">+549 0351-5891912</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:infoiracbiogen@gmail.com">infoiracbiogen@gmail.com</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <a href="https://wa.me/5493517592643?text=Hola%2C%20quiero%20información%20sobre%20los%20programas%20de%20IRAC%20BIOGEN"
+                            target="_blank" rel="noopener noreferrer">WhatsApp directo</a>
+                    </div>
+                    <div class="footer-contact-item"
+                        style="margin-top: var(--sp-3); padding-top: var(--sp-3); border-top: 1px solid rgba(255,255,255,0.08);">
+                        <i class="fas fa-house-chimney" style="color: var(--accent);"></i>
+                        <a href="posta-del-tigre.html">La Posta del Tigre</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-partners">
+                <p class="footer-partners__label">Nos acompañan</p>
+                <div class="footer-partners__logos" id="footerPartners"></div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 IRAC BIOGEN. Todos los derechos reservados.</span>
+                <span>
+                    <a href="posta-del-tigre.html">La Posta del Tigre</a> ·
+                    <a href="https://iracbiogen.com/politicas-de-privacidad/" target="_blank"
+                        rel="noopener noreferrer">Privacidad</a>
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="partners.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programas de Formación — IRAC BIOGEN</title>
+    <meta name="description"
+        content="Maestrías, Especializaciones, Cursos Intensivos y Pasantías en Reproducción Animal y Biotecnología. IRAC BIOGEN, Córdoba, Argentina.">
+    <link rel="stylesheet" href="styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,600;0,700;1,600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        crossorigin="anonymous">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="main-header" id="main-header">
+        <div class="container header-content">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="./logo.png" alt="IRAC BIOGEN Logo">
+                </a>
+            </div>
+            <nav class="main-nav" id="desktop-nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li class="nav-item nav-item--dropdown">
+                        <a href="programas.html" class="nav-dropdown-trigger" aria-haspopup="true">
+                            <span>Formación</span>
+                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </a>
+                        <div class="nav-dropdown-panel" aria-label="Submenu de formacion">
+                            <a href="programas.html" data-nav-category="all">Ver toda la oferta</a>
+                            <a href="programas.html?type=maestria" data-nav-category="maestria">Maestrías</a>
+                            <a href="programas.html?type=especializacion" data-nav-category="especializacion">Especializaciones</a>
+                            <a href="programas.html?type=curso" data-nav-category="curso">Cursos intensivos</a>
+                            <a href="programas.html?type=pasantia" data-nav-category="pasantia">Pasantías</a>
+                        </div>
+                    </li>
+                    <li><a href="index.html#institucional">Institución</a></li>
+                    <li><a href="index.html#novedades">Novedades</a></li>
+                    <li><a href="index.html#contacto" class="nav-cta">Contactanos</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <nav class="mobile-nav" id="mobile-nav">
+        <a href="index.html">Inicio</a>
+        <div class="mobile-nav-group">
+            <button type="button" class="mobile-submenu-toggle" aria-expanded="false" aria-controls="mobileFormacionMenu">
+                <span>Formación</span>
+                <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="mobile-submenu" id="mobileFormacionMenu">
+                <a href="programas.html" data-nav-category="all">Ver toda la oferta</a>
+                <a href="programas.html?type=maestria" data-nav-category="maestria">Maestrías</a>
+                <a href="programas.html?type=especializacion" data-nav-category="especializacion">Especializaciones</a>
+                <a href="programas.html?type=curso" data-nav-category="curso">Cursos intensivos</a>
+                <a href="programas.html?type=pasantia" data-nav-category="pasantia">Pasantías</a>
+            </div>
+        </div>
+        <a href="index.html#institucional">Institución</a>
+        <a href="index.html#novedades">Novedades</a>
+        <a href="index.html#contacto" class="nav-cta">Contactanos</a>
+    </nav>
+
+    <!-- Hero de página -->
+    <section class="hero-page">
+        <div class="container">
+            <h1>Programas de Formación</h1>
+            <p>Encontrá el programa que se adapta a tu perfil. Convocatorias 2026 abiertas con fechas confirmadas y cupos limitados.</p>
+        </div>
+    </section>
+
+    <!-- Programs + Filters -->
+    <div class="programs-view">
+        <div class="container">
+            <div class="programs-layout">
+
+                <!-- Sidebar Filters -->
+                <aside class="filters-sidebar" id="filtersSidebar">
+
+                    <!-- Toggle visible solo en mobile -->
+                    <button class="filters-mobile-toggle" id="filtersMobileToggle" aria-expanded="false" aria-controls="filtersContent">
+                        <span class="filters-toggle-label"><i class="fas fa-sliders"></i> Filtrar programas</span>
+                        <span class="filters-active-badge" id="filtersActiveCount" style="display:none;"></span>
+                        <i class="fas fa-chevron-down filters-chevron"></i>
+                    </button>
+
+                    <!-- Contenido colapsable en mobile -->
+                    <div class="filters-content" id="filtersContent">
+
+                        <div class="filters-header">
+                            <div class="filters-header-main">
+                                <i class="fas fa-sliders" style="color:var(--accent-dark); font-size: var(--fs-sm);"></i>
+                                <h3>Filtrá según lo que buscás</h3>
+                            </div>
+                            <button class="filters-reset" id="resetFilters">Limpiar todo</button>
+                        </div>
+
+                        <div class="filter-group">
+                            <h4>Tipo de formación</h4>
+                            <label class="filter-option">
+                                <input type="checkbox" name="type" value="maestria">
+                                <span class="filter-option-label">Maestría / Especialización</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="type" value="curso">
+                                <span class="filter-option-label">Curso Intensivo</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="type" value="pasantia">
+                                <span class="filter-option-label">Pasantía</span>
+                            </label>
+                        </div>
+
+                        <div class="filter-group">
+                            <h4>Modalidad</h4>
+                            <label class="filter-option">
+                                <input type="checkbox" name="modality" value="presencial">
+                                <span class="filter-option-label">Presencial</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="modality" value="online">
+                                <span class="filter-option-label">Online</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="modality" value="hibrido">
+                                <span class="filter-option-label">Híbrido</span>
+                            </label>
+                        </div>
+
+                        <div class="filter-group filter-group--secondary">
+                            <h4>Duración</h4>
+                            <label class="filter-option">
+                                <input type="checkbox" name="duration" value="corta">
+                                <span class="filter-option-label">Corta <em>(días a 3 meses)</em></span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="duration" value="media">
+                                <span class="filter-option-label">Media <em>(3–6 meses)</em></span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="duration" value="larga">
+                                <span class="filter-option-label">Larga <em>(6+ meses)</em></span>
+                            </label>
+                        </div>
+
+                    </div><!-- end filters-content -->
+
+                    <!-- La Posta promo -->
+                    <a href="posta-del-tigre.html" class="posta-sidebar-promo">
+                        <p class="posta-sidebar-promo__label">
+                            <i class="fas fa-house-chimney"></i> Residencia en campus
+                        </p>
+                        <p class="posta-sidebar-promo__text">¿Venís de otra ciudad o del exterior? La Posta del Tigre te permite vivir la experiencia IRAC de forma completa, a metros del laboratorio y las instalaciones.</p>
+                        <span class="link-arrow">Conocer la residencia <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                </aside>
+
+                <!-- Programs List -->
+                <main class="programs-main">
+                    <div class="programs-main-header">
+                        <h2 style="font-size: var(--fs-lg); font-family: var(--font-body);">Todos los programas</h2>
+                        <span class="programs-count" id="programsCount">8 programas disponibles</span>
+                    </div>
+
+                    <!-- Chips de filtros activos (se renderizan por JS) -->
+                    <div class="filters-chips" id="filtersChips"></div>
+                    <div class="programs-context-badge" id="programsContextBadge" hidden></div>
+
+                    <p style="font-size: var(--fs-sm); color: var(--text-light); margin-bottom: var(--sp-5);">Filtrá por tipo de formación, modalidad o duración para encontrar el programa ideal.</p>
+
+                    <div class="programs-list-grid" id="programsGrid">
+
+                        <!-- Maestría Biotecnologías -->
+                        <div class="program-list-card" data-type="maestria" data-category="maestria" data-modality="hibrido"
+                            data-duration="larga">
+                            <div class="program-list-img"
+                                style="background-image: url('images/hero-vacas-lab.jpg');">
+                            </div>
+                            <div class="program-list-body">
+                                <span class="badge badge-blue" style="align-self:flex-start">Maestría · UNC</span>
+                                <h3>Maestría en Biotecnologías Reproductivas en Bovinos</h3>
+                                <div class="program-list-meta">
+                                    <span><i class="fas fa-display"></i> Híbrida (70% online)</span>
+                                    <span><i class="far fa-clock"></i> 2 años</span>
+                                    <span><i class="fas fa-location-dot"></i> Gral. Paz, Córdoba</span>
+                                    <span><i class="fas fa-house-chimney" style="color:var(--accent-dark)"></i> <a
+                                            href="posta-del-tigre.html"
+                                            style="color:var(--primary); font-weight:600;">Residencia
+                                            disponible</a></span>
+                                </div>
+                                <div class="program-dates-row">
+                                    <span class="badge badge-urgent"><i class="fas fa-hourglass-half"></i> Cierre: 30 de junio</span>
+                                    <span class="badge badge-date"><i class="fas fa-users"></i> Cupos limitados</span>
+                                </div>
+                            </div>
+                            <div class="program-list-cta">
+                                <a href="programa-detalle.html" class="btn btn-outline btn-sm">Ver programa <i
+                                        class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+                        <!-- Especialización -->
+                        <div class="program-list-card" data-type="maestria" data-category="especializacion" data-modality="presencial"
+                            data-duration="larga">
+                            <div class="program-list-img"
+                                style="background-image: url('images/Trabajos-finales-Especializacion-en-Reproduccion-Bovina.jpg');">
+                            </div>
+                            <div class="program-list-body">
+                                <span class="badge badge-yellow" style="align-self:flex-start">Especialización · CONEAU
+                                    "A"</span>
+                                <h3>Especialización en Reproducción Bovina</h3>
+                                <div class="program-list-meta">
+                                    <span><i class="fas fa-building-columns"></i> Presencial</span>
+                                    <span><i class="far fa-clock"></i> 2 años · 480 hs.</span>
+                                    <span><i class="fas fa-users"></i> +400 egresados</span>
+                                    <span><i class="fas fa-house-chimney" style="color:var(--accent-dark)"></i> <a
+                                            href="posta-del-tigre.html"
+                                            style="color:var(--primary); font-weight:600;">Residencia
+                                            disponible</a></span>
+                                </div>
+                                <div class="program-dates-row">
+                                    <span class="badge badge-urgent"><i class="fas fa-hourglass-half"></i> Cierre: 20 de junio</span>
+                                    <span class="badge badge-date"><i class="fas fa-calendar-check"></i> Inicio: 20 de julio</span>
+                                    <span class="badge badge-date"><i class="fas fa-users"></i> Cupos limitados</span>
+                                </div>
+                            </div>
+                            <div class="program-list-cta">
+                                <a href="programa-detalle.html" class="btn btn-outline btn-sm">Ver programa <i
+                                        class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+                        <!-- Maestría Carne -->
+                        <div class="program-list-card" data-type="maestria" data-category="maestria" data-modality="presencial"
+                            data-duration="larga">
+                            <div class="program-list-img"
+                                style="background-image: url('images/Gemini_Generated_Image_tmhi6otmhi6otmhi.png');">
+                            </div>
+                            <div class="program-list-body">
+                                <span class="badge badge-blue" style="align-self:flex-start">Maestría</span>
+                                <h3>Maestría en Producción de Carne Bovina</h3>
+                                <div class="program-list-meta">
+                                    <span><i class="fas fa-circle-info"></i> Modalidad a confirmar</span>
+                                    <span><i class="fas fa-location-dot"></i> Córdoba, Argentina</span>
+                                </div>
+                            </div>
+                            <div class="program-list-cta">
+                                <a href="programa-detalle.html" class="btn btn-outline btn-sm">Ver programa <i
+                                        class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+                        <!-- Pasantía 2026 -->
+                        <div class="program-list-card" data-type="pasantia" data-category="pasantia" data-modality="presencial"
+                            data-duration="media">
+                            <div class="program-list-img"
+                                style="background-image: url('images/Gemini_Generated_Image_hsmvq5hsmvq5hsmv.png');">
+                            </div>
+                            <div class="program-list-body">
+                                <span class="badge badge-open" style="align-self:flex-start">Pasantía · 2026 ·
+                                    Abierta</span>
+                                <h3>Pasantía Profesional en Biotecnologías Reproductivas</h3>
+                                <div class="program-list-meta">
+                                    <span><i class="fas fa-location-dot"></i> Presencial — Gral. Paz</span>
+                                    <span><i class="far fa-calendar"></i> Jul – Dic 2026</span>
+                                    <span><i class="fas fa-user-tie"></i> Con mentor especializado</span>
+                                    <span><i class="fas fa-house-chimney" style="color:var(--accent-dark)"></i> <a
+                                            href="posta-del-tigre.html"
+                                            style="color:var(--primary); font-weight:600;">Residencia
+                                            disponible</a></span>
+                                </div>
+                                <div class="program-dates-row">
+                                    <span class="badge badge-date"><i class="fas fa-calendar-check"></i> Inicio: 15 de julio</span>
+                                    <span class="badge badge-date"><i class="fas fa-seedling"></i> Experiencia inmersiva jul–dic</span>
+                                </div>
+                            </div>
+                            <div class="program-list-cta">
+                                <a href="programa-detalle.html" class="btn btn-outline btn-sm">Ver programa <i
+                                        class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+                        <!-- Ecografía -->
+                        <div class="program-list-card" data-type="curso" data-category="curso" data-modality="presencial"
+                            data-duration="corta">
+                            <div class="program-list-img"
+                                style="background-image: url('images/Gemini_Generated_Image_tmhi6otmhi6otmhi.png');">
+                            </div>
+                            <div class="program-list-body">
+                                <span class="badge badge-type" style="align-self:flex-start">Curso Intensivo</span>
+                                <h3>Ecografía Reproductiva en Bovinos</h3>
+                                <div class="program-list-meta">
+                                    <span><i class="fas fa-location-dot"></i> Presencial — IRAC</span>
+                                    <span><i class="far fa-calendar"></i> 29 de junio al 1 de julio</span>
+                                    <span><i class="fas fa-stethoscope"></i> Médicos Veterinarios</span>
+                                    <span><i class="fas fa-user-group"></i> Cupos limitados</span>
+                                    <span><i class="fas fa-house-chimney" style="color:var(--accent-dark)"></i> <a
+                                            href="posta-del-tigre.html"
+                                            style="color:var(--primary); font-weight:600;">Residencia
+                                            disponible</a></span>
+                                </div>
+                                <div class="program-dates-row">
+                                    <span class="badge badge-date"><i class="fas fa-calendar-check"></i> Fecha confirmada: 29 jun – 1 jul</span>
+                                    <span class="badge badge-date"><i class="fas fa-pen-to-square"></i> Reserva con seña</span>
+                                </div>
+                            </div>
+                            <div class="program-list-cta">
+                                <a href="programa-detalle.html" class="btn btn-outline btn-sm">Ver programa <i
+                                        class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+                        <!-- Manejo de semen -->
+                        <div class="program-list-card" data-type="curso" data-category="curso" data-modality="presencial"
+                            data-duration="corta">
+                            <div class="program-list-img"
+                                style="background-image: url('images/hero-vacas-lab.jpg');">
+                            </div>
+                            <div class="program-list-body">
+                                <span class="badge badge-type" style="align-self:flex-start">Curso Intensivo</span>
+                                <h3>Evaluación y Manejo de Semen Fresco, Refrigerado y Congelado de Bovinos</h3>
+                                <div class="program-list-meta">
+                                    <span><i class="fas fa-location-dot"></i> Presencial — IRAC</span>
+                                    <span><i class="far fa-calendar"></i> 18 al 20 de mayo</span>
+                                    <span><i class="fas fa-stethoscope"></i> Médicos Veterinarios</span>
+                                    <span><i class="fas fa-user-group"></i> Cupos limitados</span>
+                                    <span><i class="fas fa-house-chimney" style="color:var(--accent-dark)"></i> <a
+                                            href="posta-del-tigre.html"
+                                            style="color:var(--primary); font-weight:600;">Residencia
+                                            disponible</a></span>
+                                </div>
+                                <div class="program-dates-row">
+                                    <span class="badge badge-date"><i class="fas fa-calendar-check"></i> Fecha confirmada: 18–20 de mayo</span>
+                                    <span class="badge badge-date"><i class="fas fa-pen-to-square"></i> Reserva con seña</span>
+                                </div>
+                            </div>
+                            <div class="program-list-cta">
+                                <a href="programa-detalle.html" class="btn btn-outline btn-sm">Ver programa <i
+                                        class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+                        <!-- Transferencia -->
+                        <div class="program-list-card" data-type="curso" data-category="curso" data-modality="presencial"
+                            data-duration="corta">
+                            <div class="program-list-img"
+                                style="background-image: url('images/transferencia_embriones.jpg');">
+                            </div>
+                            <div class="program-list-body">
+                                <span class="badge badge-type" style="align-self:flex-start">Curso Intensivo</span>
+                                <h3>Colección, Clasificación y Transferencia de Embriones</h3>
+                                <div class="program-list-meta">
+                                    <span><i class="fas fa-location-dot"></i> Presencial — IRAC</span>
+                                    <span><i class="far fa-calendar"></i> 13 al 17 de octubre</span>
+                                    <span><i class="fas fa-stethoscope"></i> Médicos Veterinarios</span>
+                                    <span><i class="fas fa-user-group"></i> Cupos limitados</span>
+                                </div>
+                                <div class="program-dates-row">
+                                    <span class="badge badge-date"><i class="fas fa-calendar-check"></i> Fecha confirmada: 13–17 de octubre</span>
+                                    <span class="badge badge-date"><i class="fas fa-pen-to-square"></i> Reserva con seña</span>
+                                </div>
+                            </div>
+                            <div class="program-list-cta">
+                                <a href="programa-detalle.html" class="btn btn-outline btn-sm">Ver programa <i
+                                        class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+                        <!-- Aspiración -->
+                        <div class="program-list-card" data-type="curso" data-category="curso" data-modality="presencial"
+                            data-duration="corta">
+                            <div class="program-list-img"
+                                style="background-image: url('images/bovine-ivf-lab.png');">
+                            </div>
+                            <div class="program-list-body">
+                                <span class="badge badge-type" style="align-self:flex-start">Curso Intensivo</span>
+                                <h3>Aspiración Folicular, Búsqueda y Clasificación de Ovocitos</h3>
+                                <div class="program-list-meta">
+                                    <span><i class="fas fa-location-dot"></i> Presencial — IRAC</span>
+                                    <span><i class="far fa-calendar"></i> 31 de agosto al 3 de septiembre</span>
+                                    <span><i class="fas fa-stethoscope"></i> Médicos Veterinarios</span>
+                                    <span><i class="fas fa-user-group"></i> Cupos limitados</span>
+                                </div>
+                                <div class="program-dates-row">
+                                    <span class="badge badge-date"><i class="fas fa-calendar-check"></i> Fecha confirmada: 31 ago – 3 sep</span>
+                                    <span class="badge badge-date"><i class="fas fa-pen-to-square"></i> Reserva con seña</span>
+                                </div>
+                            </div>
+                            <div class="program-list-cta">
+                                <a href="programa-detalle.html" class="btn btn-outline btn-sm">Ver programa <i
+                                        class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+
+                    </div><!-- end programsGrid -->
+
+                    <!-- No results -->
+                    <div id="noResults"
+                        style="display:none; text-align:center; padding: var(--sp-8); color: var(--text-light);">
+                        <i class="fas fa-search"
+                            style="font-size:2.5rem; margin-bottom:16px; display:block; opacity:0.4;"></i>
+                        <p>Ningún programa coincide con los filtros seleccionados.</p>
+                        <button id="resetFilters2" class="filters-reset"
+                            style="margin-top: var(--sp-3); font-size: var(--fs-base); color: var(--primary);">Limpiar
+                            filtros</button>
+                    </div>
+
+                    <!-- Intermediate CTA -->
+                    <div class="intermediate-cta">
+                        <h3>¿No sabés cuál es el programa ideal para vos?</h3>
+                        <p>Nuestro equipo de admisiones te orienta según tu perfil, experiencia y objetivos
+                            profesionales.</p>
+                        <div class="intermediate-cta-btns">
+                            <a href="mailto:infoiracbiogen@gmail.com" class="btn btn-primary">
+                                <i class="fas fa-envelope"></i> Consultar por email
+                            </a>
+                            <a href="https://wa.me/5493517592643?text=Hola%2C%20quiero%20información%20sobre%20los%20programas%20de%20IRAC%20BIOGEN"
+                                target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            </a>
+                            <a href="posta-del-tigre.html" class="btn btn-outline"
+                                style="background: rgba(255,255,255,0.08); color:#fff; border-color:rgba(255,255,255,0.25);">
+                                <i class="fas fa-house-chimney"></i> Ver residencia
+                            </a>
+                        </div>
+                    </div>
+
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <img src="./logo.png" alt="IRAC BIOGEN">
+                    </div>
+                    <p class="footer-tagline">Instituto de Reproducción Animal Córdoba.<br>Paraje Pozo del Tigre, Est.
+                        Gral. Paz,<br>CP 5145, Córdoba, Argentina.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/iracbiogen" target="_blank" rel="noopener noreferrer"
+                            aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/iracbiogen/" target="_blank" rel="noopener noreferrer"
+                            aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/channel/UCt8qyOt2uIhDBl2Qo9ObxJA" target="_blank"
+                            rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://wa.me/5493517592643?text=Hola%2C%20quiero%20información%20sobre%20los%20programas%20de%20IRAC%20BIOGEN"
+                            target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i
+                                class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Formación</h4>
+                    <ul>
+                        <li><a href="programas.html">Maestrías</a></li>
+                        <li><a href="programas.html">Especializaciones</a></li>
+                        <li><a href="programas.html">Cursos Intensivos</a></li>
+                        <li><a href="programas.html">Pasantías 2026</a></li>
+                        <li><a href="https://educacion.iracbiogen.com/" target="_blank" rel="noopener noreferrer">Aula
+                                Virtual <i class="fas fa-arrow-up-right-from-square fa-xs"></i></a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contacto</h4>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+5493517592643">+54 9 3517 59-2643</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:infoiracbiogen@gmail.com">infoiracbiogen@gmail.com</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <a href="https://wa.me/5493517592643?text=Hola%2C%20quiero%20información%20sobre%20los%20programas%20de%20IRAC%20BIOGEN"
+                            target="_blank" rel="noopener noreferrer">WhatsApp directo</a>
+                    </div>
+                    <div class="footer-contact-item"
+                        style="margin-top: var(--sp-3); padding-top: var(--sp-3); border-top: 1px solid rgba(255,255,255,0.08);">
+                        <i class="fas fa-house-chimney" style="color: var(--accent);"></i>
+                        <a href="posta-del-tigre.html">La Posta del Tigre</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Nos acompañan -->
+            <div class="footer-partners">
+                <p class="footer-partners__label">Nos acompañan</p>
+                <div class="footer-partners__logos" id="footerPartners"></div>
+            </div>
+
+            <div class="footer-bottom">
+                <span>&copy; 2026 IRAC BIOGEN. Todos los derechos reservados.</span>
+                <span>
+                    <a href="posta-del-tigre.html">La Posta del Tigre</a> ·
+                    <a href="https://iracbiogen.com/politicas-de-privacidad/" target="_blank"
+                        rel="noopener noreferrer">Privacidad</a>
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="partners.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

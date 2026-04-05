@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Posta del Tigre — Residencia Universitaria · IRAC BIOGEN</title>
+    <meta name="description"
+        content="Residencia universitaria exclusiva para alumnos de IRAC BIOGEN. Un entorno de tranquilidad, convivencia y práctica real en el corazón de Córdoba.">
+    <link rel="stylesheet" href="styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,600;0,700;1,600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        crossorigin="anonymous">
+
+    <style>
+        /* ————— Estilos específicos de esta página ————— */
+        .posta-hero {
+            position: relative;
+            background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&q=80&w=2000');
+            background-size: cover;
+            background-position: center 55%;
+            color: var(--bg-white);
+            text-align: center;
+            padding: var(--sp-10) 0;
+            min-height: 520px;
+            display: flex;
+            align-items: center;
+        }
+
+        .posta-hero .hero-overlay {
+            background: linear-gradient(160deg, rgba(4, 22, 33, 0.88) 0%, rgba(11, 59, 89, 0.72) 100%);
+        }
+
+        .posta-hero h1 {
+            font-size: var(--fs-4xl);
+            color: var(--bg-white);
+            margin-bottom: var(--sp-4);
+        }
+
+        .posta-hero p {
+            font-size: var(--fs-lg);
+            opacity: 0.88;
+            margin-bottom: var(--sp-7);
+            max-width: 580px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Beneficios grid */
+        .beneficios-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--sp-5);
+        }
+
+        .beneficio-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: var(--sp-6) var(--sp-5);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .beneficio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--accent);
+        }
+
+        .beneficio-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--bg-mid);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--sp-4);
+            font-size: 1.5rem;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .beneficio-card:hover .beneficio-icon {
+            background: var(--primary);
+            color: var(--bg-white);
+        }
+
+        .beneficio-card h3 {
+            font-size: var(--fs-lg);
+            margin-bottom: var(--sp-3);
+        }
+
+        .beneficio-card p {
+            font-size: var(--fs-sm);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Experiencia */
+        .experiencia-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--sp-8);
+            align-items: center;
+        }
+
+        .experiencia-img {
+            border-radius: var(--radius-lg);
+            height: 420px;
+            background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=900');
+            background-size: cover;
+            background-position: center;
+            box-shadow: var(--shadow-md);
+        }
+
+        .experiencia-content h2 {
+            font-size: var(--fs-2xl);
+            margin-bottom: var(--sp-4);
+        }
+
+        .experiencia-content p {
+            color: var(--text-light);
+            margin-bottom: var(--sp-5);
+            line-height: 1.75;
+        }
+
+        .experiencia-bullets {
+            display: flex;
+            flex-direction: column;
+            gap: var(--sp-3);
+        }
+
+        .experiencia-bullet {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--sp-3);
+            padding: var(--sp-3) var(--sp-4);
+            background: var(--bg-light);
+            border-radius: var(--radius);
+            font-size: var(--fs-sm);
+            line-height: 1.5;
+        }
+
+        .experiencia-bullet i {
+            color: var(--accent-dark);
+            margin-top: 2px;
+            min-width: 14px;
+        }
+
+        /* Programas que incluyen La Posta */
+        .programas-posta-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--sp-5);
+        }
+
+        .programa-posta-card {
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: var(--sp-5);
+            background: var(--bg-white);
+            display: flex;
+            align-items: flex-start;
+            gap: var(--sp-4);
+            transition: var(--transition);
+        }
+
+        .programa-posta-card:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow);
+        }
+
+        .programa-posta-card-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: var(--radius);
+            background: var(--bg-mid);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .programa-posta-card h4 {
+            font-size: var(--fs-base);
+            margin-bottom: var(--sp-1);
+            font-family: var(--font-body);
+            font-weight: 700;
+        }
+
+        .programa-posta-card p {
+            font-size: var(--fs-sm);
+            color: var(--text-light);
+        }
+
+        /* CTA section */
+        .posta-cta {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            text-align: center;
+        }
+
+        @media (max-width: 900px) {
+            .beneficios-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .experiencia-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .experiencia-img {
+                height: 280px;
+            }
+
+            .programas-posta-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 540px) {
+            .beneficios-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .posta-hero h1 {
+                font-size: var(--fs-3xl);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="main-header" id="main-header">
+        <div class="container header-content">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="./logo.png" alt="IRAC BIOGEN — Instituto de Reproducción Animal Córdoba">
+                </a>
+            </div>
+            <nav class="main-nav" id="desktop-nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li class="nav-item nav-item--dropdown">
+                        <a href="programas.html" class="nav-dropdown-trigger" aria-haspopup="true">
+                            <span>Formación</span>
+                            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        </a>
+                        <div class="nav-dropdown-panel" aria-label="Submenu de formacion">
+                            <a href="programas.html" data-nav-category="all">Ver toda la oferta</a>
+                            <a href="programas.html?type=maestria" data-nav-category="maestria">Maestrías</a>
+                            <a href="programas.html?type=especializacion" data-nav-category="especializacion">Especializaciones</a>
+                            <a href="programas.html?type=curso" data-nav-category="curso">Cursos intensivos</a>
+                            <a href="programas.html?type=pasantia" data-nav-category="pasantia">Pasantías</a>
+                        </div>
+                    </li>
+                    <li><a href="index.html#institucional">Institución</a></li>
+                    <li><a href="index.html#novedades">Novedades</a></li>
+                    <li><a href="#contacto" class="nav-cta">Contactanos</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <nav class="mobile-nav" id="mobile-nav">
+        <a href="index.html">Inicio</a>
+        <div class="mobile-nav-group">
+            <button type="button" class="mobile-submenu-toggle" aria-expanded="false" aria-controls="mobileFormacionMenu">
+                <span>Formación</span>
+                <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="mobile-submenu" id="mobileFormacionMenu">
+                <a href="programas.html" data-nav-category="all">Ver toda la oferta</a>
+                <a href="programas.html?type=maestria" data-nav-category="maestria">Maestrías</a>
+                <a href="programas.html?type=especializacion" data-nav-category="especializacion">Especializaciones</a>
+                <a href="programas.html?type=curso" data-nav-category="curso">Cursos intensivos</a>
+                <a href="programas.html?type=pasantia" data-nav-category="pasantia">Pasantías</a>
+            </div>
+        </div>
+        <a href="index.html#institucional">Institución</a>
+        <a href="index.html#novedades">Novedades</a>
+        <a href="#contacto" class="nav-cta">Contactanos</a>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <div class="breadcrumb-inner">
+                <a href="index.html">Inicio</a>
+                <span class="sep"><i class="fas fa-chevron-right fa-xs"></i></span>
+                <span class="current">La Posta del Tigre</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="posta-hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <span class="hero-eyebrow">
+                <i class="fas fa-house-chimney"></i> Residencia Universitaria · IRAC BIOGEN
+            </span>
+            <h1>La Posta del Tigre</h1>
+            <p>Un entorno pensado para que puedas estudiar, practicar y conectar con colegas de toda Latinoamérica en el corazón de Córdoba.</p>
+            <div class="hero-actions">
+                <a href="https://wa.me/5493517592643?text=Hola%2C%20quiero%20información%20sobre%20La%20Posta%20del%20Tigre"
+                    target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+                    <i class="fab fa-whatsapp"></i> Consultar disponibilidad
+                </a>
+                <a href="programas.html" class="btn btn-ghost btn-lg">
+                    <i class="fas fa-graduation-cap"></i> Ver programas asociados
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Qué es La Posta -->
+    <section class="section section--light">
+        <div class="container">
+            <div style="max-width: 780px; margin: 0 auto; text-align: center;">
+                <h2 class="section-title">¿Qué es La Posta del Tigre?</h2>
+                <p style="font-size: var(--fs-md); color: var(--text-light); line-height: 1.8;">
+                    La Posta del Tigre es la <strong style="color: var(--primary)">residencia universitaria oficial de
+                        IRAC BIOGEN</strong>, ubicada en el Paraje Pozo del Tigre, Estación General Paz, Córdoba. Fue
+                    creada para que los alumnos que viajan desde otras provincias y países puedan hospedarse en un
+                    entorno seguro, cómodo y orientado al aprendizaje, a pasos del laboratorio y los campos de práctica
+                    del instituto.
+                </p>
+                <p
+                    style="font-size: var(--fs-md); color: var(--text-light); line-height: 1.8; margin-top: var(--sp-4);">
+                    Con más de 30 años formando profesionales de todo el mundo, IRAC sabe que la <em>inmersión
+                        total</em> marca la diferencia. La Posta del Tigre es el espacio donde esa inmersión se vuelve
+                    posible.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beneficios -->
+    <section class="section section--gray">
+        <div class="container">
+            <h2 class="section-title">Un espacio pensado para vos</h2>
+            <p class="section-intro">Tranquilidad, cercanía con las prácticas y una comunidad académica real.</p>
+            <div class="beneficios-grid">
+                <div class="beneficio-card">
+                    <div class="beneficio-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Tranquilidad para estudiar</h3>
+                    <p>Entorno natural alejado del ruido urbano, ideal para concentrarse, repasar y preparar actividades
+                        del aula virtual.</p>
+                </div>
+                <div class="beneficio-card">
+                    <div class="beneficio-icon">
+                        <i class="fas fa-map-location-dot"></i>
+                    </div>
+                    <h3>Cercanía con las prácticas</h3>
+                    <p>A pasos del laboratorio, los encierros y los campos de práctica donde se desarrollan los módulos
+                        presenciales.</p>
+                </div>
+                <div class="beneficio-card">
+                    <div class="beneficio-icon">
+                        <i class="fas fa-people-group"></i>
+                    </div>
+                    <h3>Comunidad académica</h3>
+                    <p>Convivís con colegas de México, Nueva Zelanda, Brasil, Colombia y Argentina. El networking es
+                        parte del aprendizaje.</p>
+                </div>
+                <div class="beneficio-card">
+                    <div class="beneficio-icon">
+                        <i class="fas fa-shield-halved"></i>
+                    </div>
+                    <h3>Seguridad y confort</h3>
+                    <p>Instalaciones cuidadas, seguras y confortables para que te concentres en tu formación sin
+                        preocupaciones logísticas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experiencia del alumno -->
+    <section class="section section--light">
+        <div class="container">
+            <div class="experiencia-layout">
+                <div class="experiencia-img" role="img" aria-label="Alumnos de IRAC BIOGEN en el campus"></div>
+                <div class="experiencia-content">
+                    <span class="badge badge-blue" style="margin-bottom: var(--sp-4); display:inline-block;">Experiencia
+                        de inmersión</span>
+                    <h2>Más que un alojamiento: una experiencia académica</h2>
+                    <p>Los alumnos que eligen quedarse en La Posta viajan al IRAC con un solo objetivo: formarse al
+                        máximo nivel. El entorno lo hace posible.</p>
+                    <div class="experiencia-bullets">
+                        <div class="experiencia-bullet">
+                            <i class="fas fa-check"></i>
+                            <span><strong>Inmersión total:</strong> vivís, estudiás y practicás en el mismo ecosistema
+                                académico durante toda tu estadía presencial.</span>
+                        </div>
+                        <div class="experiencia-bullet">
+                            <i class="fas fa-check"></i>
+                            <span><strong>Networking real:</strong> compartís comidas, espacios y charlas con alumnos y
+                                docentes de toda la región.</span>
+                        </div>
+                        <div class="experiencia-bullet">
+                            <i class="fas fa-check"></i>
+                            <span><strong>Acceso inmediato al campo:</strong> sin traslados, sin tiempos perdidos. El
+                                laboratorio y los rodeos están a metros.</span>
+                        </div>
+                        <div class="experiencia-bullet">
+                            <i class="fas fa-check"></i>
+                            <span><strong>Descanso garantizado:</strong> las jornadas son intensas. Un buen descanso
+                                hace la diferencia en el aprendizaje.</span>
+                        </div>
+                        <div class="experiencia-bullet">
+                            <i class="fas fa-check"></i>
+                            <span><strong>Ambiente de armonía y libertad:</strong> los alumnos de todo el mundo
+                                describen la estadía como una experiencia que va más allá de lo académico.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programas que incluyen La Posta -->
+    <section class="section section--gray">
+        <div class="container">
+            <h2 class="section-title">Disponible para alumnos de</h2>
+            <p class="section-intro">La Posta del Tigre está disponible durante los módulos presenciales e intensivos de
+                los siguientes programas.</p>
+            <div class="programas-posta-grid">
+                <a href="programa-detalle.html" class="programa-posta-card"
+                    style="text-decoration: none; display: flex;">
+                    <div class="programa-posta-card-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <div>
+                        <h4>Maestría en Biotecnologías Reproductivas</h4>
+                        <p>Durante el encuentro presencial de 2 semanas en el campus de IRAC.</p>
+                        <span class="link-arrow" style="margin-top: var(--sp-3); display:inline-flex;">Ver programa <i
+                                class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+                <a href="programa-detalle.html" class="programa-posta-card"
+                    style="text-decoration: none; display: flex;">
+                    <div class="programa-posta-card-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div>
+                        <h4>Especialización en Reproducción Bovina</h4>
+                        <p>Disponible para alumnos que viajan de otras provincias o el exterior.</p>
+                        <span class="link-arrow" style="margin-top: var(--sp-3); display:inline-flex;">Ver programa <i
+                                class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+                <a href="programas.html" class="programa-posta-card" style="text-decoration: none; display: flex;">
+                    <div class="programa-posta-card-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <div>
+                        <h4>Cursos Intensivos</h4>
+                        <p>Ideal para profesionales que viajan al IRAC a cursar una semana intensiva.</p>
+                        <span class="link-arrow" style="margin-top: var(--sp-3); display:inline-flex;">Ver cursos <i
+                                class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="contacto" class="posta-cta section">
+        <div class="container cta-content">
+            <h2>¿Vas a cursar un módulo presencial?</h2>
+            <p>Consultanos disponibilidad y te damos toda la información sobre alojamiento, traslados y logística para
+                tu estadía en La Posta del Tigre.</p>
+            <div class="cta-actions">
+                <a href="https://wa.me/5493517592643?text=Hola%2C%20quiero%20información%20sobre%20La%20Posta%20del%20Tigre%20y%20disponibilidad%20de%20alojamiento"
+                    target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg">
+                    <i class="fab fa-whatsapp"></i> Hablar por WhatsApp
+                </a>
+                <a href="mailto:infoiracbiogen@gmail.com" class="btn btn-primary btn-lg">
+                    <i class="fas fa-envelope"></i> Consultar por email
+                </a>
+                <a href="programas.html" class="btn btn-ghost btn-lg">
+                    <i class="fas fa-graduation-cap"></i> Ver todos los programas
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">
+                        <img src="./logo.png" alt="IRAC BIOGEN">
+                    </div>
+                    <p class="footer-tagline">Instituto de Reproducción Animal Córdoba.<br>Paraje Pozo del Tigre, Est.
+                        Gral. Paz,<br>CP 5145, Córdoba, Argentina.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/iracbiogen" target="_blank" rel="noopener noreferrer"
+                            aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/iracbiogen/" target="_blank" rel="noopener noreferrer"
+                            aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/channel/UCt8qyOt2uIhDBl2Qo9ObxJA" target="_blank"
+                            rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://wa.me/5493517592643?text=Hola%2C%20quiero%20información%20sobre%20los%20programas%20de%20IRAC%20BIOGEN"
+                            target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i
+                                class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Formación</h4>
+                    <ul>
+                        <li><a href="programas.html">Maestrías</a></li>
+                        <li><a href="programas.html">Especializaciones</a></li>
+                        <li><a href="programas.html">Cursos Intensivos</a></li>
+                        <li><a href="programas.html">Pasantías 2026</a></li>
+                        <li><a href="https://educacion.iracbiogen.com/" target="_blank" rel="noopener noreferrer">Aula
+                                Virtual <i class="fas fa-arrow-up-right-from-square fa-xs"></i></a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contacto</h4>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+5493517592643">+54 9 3517 59-2643</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+5490351589192">+549 0351-5891912</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:infoiracbiogen@gmail.com">infoiracbiogen@gmail.com</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <a href="https://wa.me/5493517592643?text=Hola%2C%20quiero%20información%20sobre%20los%20programas%20de%20IRAC%20BIOGEN"
+                            target="_blank" rel="noopener noreferrer">WhatsApp directo</a>
+                    </div>
+                    <div class="footer-contact-item"
+                        style="margin-top: var(--sp-3); padding-top: var(--sp-3); border-top: 1px solid rgba(255,255,255,0.08);">
+                        <i class="fas fa-house-chimney" style="color: var(--accent);"></i>
+                        <a href="posta-del-tigre.html">La Posta del Tigre</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Nos acompañan -->
+            <div class="footer-partners">
+                <p class="footer-partners__label">Nos acompañan</p>
+                <div class="footer-partners__logos" id="footerPartners"></div>
+            </div>
+
+            <div class="footer-bottom">
+                <span>&copy; 2026 IRAC BIOGEN. Todos los derechos reservados.</span>
+                <span>
+                    <a href="posta-del-tigre.html">La Posta del Tigre</a> ·
+                    <a href="https://iracbiogen.com/politicas-de-privacidad/" target="_blank"
+                        rel="noopener noreferrer">Privacidad</a>
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="partners.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
